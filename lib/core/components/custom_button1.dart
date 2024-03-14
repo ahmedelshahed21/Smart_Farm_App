@@ -6,7 +6,6 @@ class CustomButton1 extends StatelessWidget{
   final VoidCallback onTapped;
   final Color? borderColor;
   const CustomButton1({super.key,required this.buttonName,required this.onTapped,this.borderColor});
-  static String id='RegisterScreen';
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
