@@ -7,7 +7,7 @@ class CustomExpansionTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 10.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: Colors.black
@@ -18,29 +18,28 @@ class CustomExpansionTile extends StatelessWidget {
         ),
         collapsedIconColor: kPrimaryColor,
         iconColor: Colors.red,
-        collapsedTextColor: kPrimaryColor,
+        collapsedTextColor: Colors.white,
+        textColor: kPrimaryColor,
         collapsedBackgroundColor: Colors.black.withOpacity(0.4),
         backgroundColor: Colors.black.withOpacity(0.4),
         tilePadding: const EdgeInsets.only(left: 0.0),
-
         title: const Text('OverView',
           style: TextStyle(
-              fontWeight: FontWeight.bold
+              fontWeight: FontWeight.bold,
           ),
         ),
-        textColor: Colors.red,
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 12.0),
+            height: 120,
+            padding: const EdgeInsets.only(bottom:12,right: 12.0,left: 12.0),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 color: Colors.black.withOpacity(0.4)
             ),
             child: Text(content,
               style: TextStyle(
-                fontSize: 16,
-                color: kPrimaryColor.withOpacity(0.6),
-                fontWeight: FontWeight.w500,
+                fontSize: 14,
+                color: Colors.white.withOpacity(0.6),
               ),
             ),
           ),
