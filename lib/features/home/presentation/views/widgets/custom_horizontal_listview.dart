@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:smart_farm/features/home/presentation/views/widgets/categories_listview.dart';
+import 'package:smart_farm/features/home/presentation/views/widgets/plants_listview.dart';
 import 'package:smart_farm/constants.dart';
 
-class CustomCategoriesListView extends StatelessWidget{
-  const CustomCategoriesListView({super.key});
+class CustomHorizontalListView extends StatelessWidget{
+  const CustomHorizontalListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class CustomCategoriesListView extends StatelessWidget{
           ),
           child: const Padding(
             padding: EdgeInsets.only(bottom: 8.0),
-            child: CategoriesListView(),
+            child: PlantsListView(),
           ),
         ),
       ],

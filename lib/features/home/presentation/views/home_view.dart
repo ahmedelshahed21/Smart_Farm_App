@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_farm/features/home/presentation/views/widgets/custom_categories_listview.dart';
+import 'package:smart_farm/features/home/presentation/views/widgets/custom_horizontal_listview.dart';
 import 'package:smart_farm/features/home/presentation/views/widgets/custom_plant_card.dart';
 import 'package:smart_farm/constants.dart';
 
@@ -24,7 +24,7 @@ class HomeView extends StatelessWidget{
       body:
       const Column(
         children: [
-          CustomCategoriesListView(),
+          CustomHorizontalListView(),
           CustomPlantContainer(),
         ],
       ),
