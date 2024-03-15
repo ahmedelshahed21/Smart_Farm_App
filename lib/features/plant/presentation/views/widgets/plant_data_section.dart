@@ -9,11 +9,11 @@ class PlantDataSection extends StatelessWidget {
   final double? soilHumidity;
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         Column(
           children: [
-            CustomPlantDataCard(name: 'Watering',icon: Icons.water_drop_outlined,iconColo: Colors.blue,value: 22.5, unity: 'L'),
+            CustomPlantDataCard(name: 'Watering',icon: Icons.water_drop_outlined,iconColo: Colors.blue,value: water ?? 22.5, unity: 'L'),
             SizedBox(height: 10),
             CustomPlantDataCard(name: 'Humidity',icon: Icons.water,iconColo: Colors.white70,value: 22.22, unity: '%'),
           ],

@@ -6,10 +6,10 @@ import 'package:smart_farm/features/plant/presentation/views/plant_view.dart';
 class PlantsListView extends StatelessWidget{
   const PlantsListView({super.key});
   final List<CategoryModel> categories= const[
-    CategoryModel(image: 'assets/images/Wheat.jpeg', categoryName: 'Wheat'),
-    CategoryModel(image: 'assets/images/Rice.jpg', categoryName: 'Rice'),
-    CategoryModel(image: 'assets/images/Cotton.png', categoryName: 'Cotton'),
-    CategoryModel(image: 'assets/images/Corn.webp', categoryName: 'Corn'),
+    CategoryModel(image: 'assets/images/Wheat.jpeg', plantName: 'Wheat'),
+    CategoryModel(image: 'assets/images/Rice.jpg', plantName: 'Rice'),
+    CategoryModel(image: 'assets/images/Cotton.png', plantName: 'Cotton'),
+    CategoryModel(image: 'assets/images/Corn.webp', plantName: 'Corn'),
   ];
 
   @override

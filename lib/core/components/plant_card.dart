@@ -25,7 +25,7 @@ class PlantCard extends StatelessWidget{
       ),
       child: Padding(
         padding: padding ?? const EdgeInsets.all(12.0),
-        child: Text(category.categoryName,
+        child: Text(category.plantName,
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: fontSize ?? 20,

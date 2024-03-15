@@ -33,7 +33,7 @@ class PlantView extends StatelessWidget{
                    '\nCultivated in diverse climates worldwide.'
               ),
               const Expanded(child: SizedBox()),
-              const PlantDataSection(),
+              const PlantDataSection(water: 25),
               const Expanded(child: SizedBox()),
               PlantAction(
                 onPressedManualButton: (){
