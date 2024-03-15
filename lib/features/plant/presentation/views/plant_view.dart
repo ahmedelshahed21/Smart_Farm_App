@@ -4,9 +4,11 @@ import 'package:smart_farm/core/components/plant_action.dart';
 import 'package:smart_farm/core/components/return_icon_button.dart';
 import 'package:smart_farm/features/home/data/models/category_model.dart';
 import 'package:smart_farm/core/components/plant_card.dart';
+import 'package:smart_farm/features/plant/presentation/views/widgets/custom_expansion_tile.dart';
+import 'package:smart_farm/features/plant/presentation/views/widgets/plant_data_section.dart';
 
 class PlantView extends StatelessWidget{
-  static String id='PlantScreen';
+  static String id='PlantView';
   const PlantView({super.key, required this.category});
   final CategoryModel category;
 
@@ -34,285 +36,11 @@ class PlantView extends StatelessWidget{
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 10.0),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Colors.black
-                  ),
-                  child: ExpansionTile(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12)
-                    ),
-                    collapsedIconColor: kPrimaryColor,
-                    iconColor: Colors.red,
-                    collapsedTextColor: kPrimaryColor,
-                    collapsedBackgroundColor: Colors.black.withOpacity(0.4),
-                    backgroundColor: Colors.black.withOpacity(0.4),
-                    tilePadding: const EdgeInsets.only(left: 0.0),
-
-                    title: const Text('OverView',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold
-                      ),
-                    ),
-                    textColor: Colors.red,
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 12.0),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            color: Colors.black.withOpacity(0.4)
-                        ),
-                        child: Text('It is a crucial food crop globally.'
-                            '\nRich in nutrients, including carbohydrates and proteins. '
-                            '\nCultivated in diverse climates worldwide.',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: kPrimaryColor.withOpacity(0.6),
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                    onExpansionChanged: (bool expanded) {},
-                  ),
-                ),
-                const SizedBox(height: 20,),
-
-
-                Row(
-                  children: [
-
-                    Column(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(vertical: 25.0,horizontal: 20.0),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              color: Colors.black.withOpacity(0.4)
-                          ),
-                          child: Column(
-                            children: [
-                              const Row(
-                                children: [
-                                  Icon(Icons.water_drop_outlined,
-                                    size: 24,
-                                    color: Colors.blue,
-                                  ),
-                                  SizedBox(width: 5),
-                                  Text('Watering',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        letterSpacing: 2,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.white
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.baseline,
-                                textBaseline: TextBaseline.alphabetic,
-                                children: [
-                                  Text('25',
-                                    style: TextStyle(
-                                        fontSize: 40,
-                                        letterSpacing: 2,
-                                        color: kPrimaryColor,
-                                        fontWeight: FontWeight.bold
-                                    ),
-                                  ),
-                                  const SizedBox(width: 5,),
-                                  Text('L',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        letterSpacing: 2,
-                                        color: Colors.white.withOpacity(0.6),
-                                        fontWeight: FontWeight.w500
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Text('every day',
-                                style: TextStyle(
-                                  color: Colors.white.withOpacity(0.6),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(height: 20,),
-                        Container(
-                          padding: const EdgeInsets.symmetric(vertical: 25.0,horizontal: 20.0),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              color: Colors.black.withOpacity(0.4)
-                          ),
-                          child: Column(
-                            children: [
-                              const Row(
-                                children: [
-                                  Icon(Icons.water,
-                                    size: 24,
-                                    color: Colors.white70,
-                                  ),
-                                  SizedBox(width: 5),
-                                  Text('Humidity',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        letterSpacing: 2,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.white
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.baseline,
-                                textBaseline: TextBaseline.alphabetic,
-                                children: [
-                                  Text('25',
-                                    style: TextStyle(
-                                        fontSize: 40,
-                                        letterSpacing: 2,
-                                        color: kPrimaryColor,
-                                        fontWeight: FontWeight.bold
-                                    ),
-                                  ),
-                                  const SizedBox(width: 5,),
-                                  Text('%',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        letterSpacing: 2,
-                                        color: Colors.white.withOpacity(0.6),
-                                        fontWeight: FontWeight.w500
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-
-                      ],
-                    ),
-                    const SizedBox(width: 5,),
-                    Column(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(vertical: 25.0,horizontal: 20.0),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              color: Colors.black.withOpacity(0.4)
-                          ),
-                          child: Column(
-                            children: [
-                              const Row(
-                                children: [
-                                  Icon(Icons.sunny_snowing,
-                                    size: 24,
-                                    color: Colors.orangeAccent,
-                                  ),
-                                  SizedBox(width: 5),
-                                  Text('Temperature',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.white
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 5),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.baseline,
-                                textBaseline: TextBaseline.alphabetic,
-                                children: [
-                                  Text('25',
-                                    style: TextStyle(
-                                        fontSize: 40,
-                                        letterSpacing: 2,
-                                        color: kPrimaryColor,
-                                        fontWeight: FontWeight.bold
-                                    ),
-                                  ),
-                                  const SizedBox(width: 5,),
-                                  Text('C',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        letterSpacing: 2,
-                                        color: Colors.white.withOpacity(0.6),
-                                        fontWeight: FontWeight.w500
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-
-                        const SizedBox(height: 20,),
-                        Container(
-                          padding: const EdgeInsets.symmetric(vertical: 25.0,horizontal: 20.0),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              color: Colors.black.withOpacity(0.4)
-                          ),
-                          child: Column(
-                            children: [
-                              const Row(
-                                children: [
-                                  Icon(Icons.water,
-                                    size: 24,
-                                    color: Colors.brown,
-                                  ),
-                                  SizedBox(width: 5),
-                                  Text('Soil Humidity',
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        letterSpacing: 2,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.white
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.baseline,
-                                textBaseline: TextBaseline.alphabetic,
-                                children: [
-                                  Text('25',
-                                    style: TextStyle(
-                                        fontSize: 40,
-                                        letterSpacing: 2,
-                                        color: kPrimaryColor,
-                                        fontWeight: FontWeight.bold
-                                    ),
-                                  ),
-                                  const SizedBox(width: 5,),
-                                  Text('%',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        letterSpacing: 2,
-                                        color: Colors.white.withOpacity(0.6),
-                                        fontWeight: FontWeight.w500
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-
-                      ],
-                    ),
-                  ],
-                ),
+                const CustomExpansionTile(content: 'It is a crucial food crop globally.'
+                    '\nRich in nutrients, including carbohydrates and proteins. '
+                    '\nCultivated in diverse climates worldwide.'),
+                const SizedBox(height: 20),
+                PlantDataSection(),
                 const SizedBox(height: 20,),
                 const PlantAction(),
               ],
@@ -322,4 +50,8 @@ class PlantView extends StatelessWidget{
     );
   }
 }
+
+
+
+
 
