@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/constants.dart';
 
-class CustomPlantDataCard extends StatelessWidget{
-  const CustomPlantDataCard({super.key, required this.name,required this.icon,required this.iconColo, required this.value, required this.unity});
+class PlantDataCard extends StatelessWidget{
+  const PlantDataCard({super.key, required this.name,required this.icon,required this.iconColo, required this.value, required this.unity});
 
   final String name;
   final double value;
@@ -16,11 +16,12 @@ class CustomPlantDataCard extends StatelessWidget{
       padding: const EdgeInsets.symmetric(vertical: 25.0,horizontal: 16.0),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: Colors.black
+          color: const Color(0xFF1C1B20),
       ),
       child: Column(
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(icon,
                 size: 30,
@@ -39,13 +40,13 @@ class CustomPlantDataCard extends StatelessWidget{
           ),
           const SizedBox(height: 10),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.baseline,
             textBaseline: TextBaseline.alphabetic,
             children: [
-              Text('${value}',
+              Text('${value.round()}',
                 style: TextStyle(
-                    fontSize: 32,
+                    fontSize: 40,
                     letterSpacing: 2,
                     color: kPrimaryColor,
                     fontWeight: FontWeight.bold
@@ -54,7 +55,7 @@ class CustomPlantDataCard extends StatelessWidget{
               const SizedBox(width: 5,),
               Text(unity,
                 style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     letterSpacing: 2,
                     color: Colors.white.withOpacity(0.6),
                     fontWeight: FontWeight.w500
@@ -62,11 +63,6 @@ class CustomPlantDataCard extends StatelessWidget{
               ),
             ],
           ),
-          // Text('every day',
-          //   style: TextStyle(
-          //     color: Colors.white.withOpacity(0.6),
-          //   ),
-          // ),
         ],
       ),
     );

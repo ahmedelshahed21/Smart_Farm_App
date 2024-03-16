@@ -10,7 +10,7 @@ class CustomExpansionTile extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: Colors.black
+          color: const Color(0xFF1C1B20)
       ),
       child: ExpansionTile(
         shape: RoundedRectangleBorder(
@@ -20,10 +20,10 @@ class CustomExpansionTile extends StatelessWidget {
         iconColor: Colors.red,
         collapsedTextColor: Colors.white,
         textColor: kPrimaryColor,
-        collapsedBackgroundColor: Colors.black.withOpacity(0.4),
-        backgroundColor: Colors.black.withOpacity(0.4),
+        collapsedBackgroundColor: const Color(0xFF1C1B20),
+        backgroundColor: const Color(0xFF1C1B20),
         tilePadding: const EdgeInsets.only(left: 0.0),
-        title: const Text('OverView',
+        title: const Text('\tOverView',
           style: TextStyle(
               fontWeight: FontWeight.bold,
           ),
@@ -34,7 +34,7 @@ class CustomExpansionTile extends StatelessWidget {
             padding: const EdgeInsets.only(bottom:12,right: 12.0,left: 12.0),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
-                color: Colors.black.withOpacity(0.4)
+                color: Color(0xFF1C1B20)
             ),
             child: Text(content,
               style: TextStyle(

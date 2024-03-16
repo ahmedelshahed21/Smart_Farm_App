@@ -10,11 +10,13 @@ class HomeView extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text('SmartFarm',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 24
+            fontSize: 24,
+            //color: const Color(0xFF1C1B20),
           ),
         ),
         centerTitle: true,

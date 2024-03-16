@@ -16,11 +16,13 @@ class PlantView extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
+        backgroundColor: Colors.black,
         centerTitle: true,
         automaticallyImplyLeading: false,
         leading: const ReturnIconButton(),
-        title: PlantCard(category: category, width: 80, height: 50, radius: 12.0, fontSize: 14.0, fontWeight: FontWeight.w600, padding: const EdgeInsets.only(top: 2.0,left: 7.0),),
+        actions: [PlantCard(category: category, width: 80, height: 50, radius: 12.0, fontSize: 14.0, fontWeight: FontWeight.w600, padding: const EdgeInsets.only(top: 2.0,left: 7.0),),]
       ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal:8.0),

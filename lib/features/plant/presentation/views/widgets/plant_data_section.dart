@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_farm/core/components/custom_plant_data_card.dart';
+import 'package:smart_farm/constants.dart';
+import 'package:smart_farm/core/components/plant_data_card.dart';
 
 class PlantDataSection extends StatelessWidget {
   const PlantDataSection({super.key, this.water,this.temp,this.humidity,this.soilHumidity,});
@@ -9,21 +10,37 @@ class PlantDataSection extends StatelessWidget {
   final double? soilHumidity;
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Column(
-          children: [
-            CustomPlantDataCard(name: 'Watering',icon: Icons.water_drop_outlined,iconColo: Colors.blue,value: water ?? 22.5, unity: 'L'),
-            SizedBox(height: 10),
-            CustomPlantDataCard(name: 'Humidity',icon: Icons.water,iconColo: Colors.white70,value: 22.22, unity: '%'),
-          ],
+        const Text('\t\tData',
+          style: TextStyle(
+            fontSize: 20,
+            //color: kPrimaryColor
+          ),
         ),
-        SizedBox(width: 5),
-        Column(
+        const SizedBox(height: 10),
+        Row(
           children: [
-            CustomPlantDataCard(name: 'Temperature',icon: Icons.sunny_snowing,iconColo: Colors.orange,value: 22.5, unity: 'C'),
-            SizedBox(height: 10,),
-            CustomPlantDataCard(name: 'Soil Humidity',icon: Icons.water,iconColo: Colors.brown,value: 22.7, unity: '%'),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                PlantDataCard(name: 'Watering',icon: Icons.water_drop_outlined,iconColo: Colors.blue,value: water ?? 22.5, unity: 'L'),
+                const SizedBox(height: 5.0),
+                PlantDataCard(name: 'Humidity',icon: Icons.water,iconColo: kPrimaryColor,value: 22.22, unity: '%'),
+              ],
+            ),
+            const SizedBox(width: 5.0),
+            const Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  PlantDataCard(name: 'Temperature',icon: Icons.sunny_snowing,iconColo: Colors.orange,value: 22, unity: 'C'),
+                  SizedBox(height: 5.0),
+                  PlantDataCard(name: 'Soil Humidity',icon: Icons.water,iconColo: Colors.brown,value: 22.4447, unity: '%'),
+                ],
+              ),
+            ),
           ],
         ),
       ],
