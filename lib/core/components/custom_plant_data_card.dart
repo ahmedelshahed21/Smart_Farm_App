@@ -16,7 +16,7 @@ class CustomPlantDataCard extends StatelessWidget{
       padding: const EdgeInsets.symmetric(vertical: 25.0,horizontal: 16.0),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: Colors.black.withOpacity(0.3)
+          color: Colors.black
       ),
       child: Column(
         children: [
@@ -26,13 +26,13 @@ class CustomPlantDataCard extends StatelessWidget{
                 size: 30,
                 color: iconColo,
               ),
-              SizedBox(width: 5),
+              const SizedBox(width: 5),
               Text(name,
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 16,
                     letterSpacing: 2,
+                    color: Colors.white,
                     fontWeight: FontWeight.w500,
-                    color: Colors.white
                 ),
               ),
             ],

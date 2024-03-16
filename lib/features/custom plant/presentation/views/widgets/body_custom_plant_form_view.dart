@@ -77,7 +77,7 @@ class BodyCustomPlantFormView extends StatelessWidget{
                 cursorColor: kPrimaryColor.withOpacity(0.6),
                 decoration: InputDecoration(
                   prefixIcon:const Icon(Icons.title),
-                  prefixIconColor: kPrimaryColor.withOpacity(0.6),
+                  prefixIconColor: Colors.white,
                   hintText: 'Plant Name',
                   hintStyle: TextStyle(
                     fontWeight: FontWeight.normal,
@@ -118,7 +118,7 @@ class BodyCustomPlantFormView extends StatelessWidget{
                   labelText: 'Watering',
                   hintText: 'How much water do this plant need ?',
                   textInputType: TextInputType.number,
-                  fillColor: Colors.green.withOpacity(0.3),
+                  fillColor: kPrimaryColor.withOpacity(0.3),
                   contentPadding: const EdgeInsets.symmetric(vertical: 5,horizontal: 20)
               ),
               CustomTextFormField(

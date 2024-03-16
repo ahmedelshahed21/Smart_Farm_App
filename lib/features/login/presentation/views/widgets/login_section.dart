@@ -38,7 +38,7 @@ class _LoginSectionState extends State<LoginSection> {
             labelText: 'USER_NAME',
             prefixIcon: Icons.alternate_email,
             prefixIconColor: Colors.black,
-            fillColor: kPrimaryColor.withOpacity(0.6),
+            fillColor: kPrimaryColor.withOpacity(0.3),
             textInputType: TextInputType.emailAddress,
             hintText: 'USER_NAME',
           ),
@@ -55,7 +55,7 @@ class _LoginSectionState extends State<LoginSection> {
                 obscureText=!obscureText;
               });
             },
-            fillColor: kPrimaryColor.withOpacity(0.6),
+            fillColor: kPrimaryColor.withOpacity(0.3),
             hintText: 'PASSWORD',
           ),
           const SizedBox(height: 40,),

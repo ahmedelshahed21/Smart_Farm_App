@@ -16,7 +16,10 @@ class _ManualControlScreenState extends State<ManualControlScreen> {
   Widget build(BuildContext context) {
     bool? ifPressed;
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+          backgroundColor: Colors.black
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(

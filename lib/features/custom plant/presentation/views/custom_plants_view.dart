@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:smart_farm/core/utils/assets_app.dart';
 import 'package:smart_farm/features/custom%20plant/presentation/views/widgets/custom_item.dart';
 import 'package:smart_farm/features/custom%20plant/presentation/views/custom_plant_form_view.dart';
+import 'package:smart_farm/features/home/data/models/category_model.dart';
+import 'package:smart_farm/features/plant/presentation/views/plant_view.dart';
 
 class AddingCustomPlantView extends StatefulWidget{
   const AddingCustomPlantView({super.key});
-  static String id='CustomPlantScreen';
+  static String id='CustomPlantView';
+  
+  
+  
 
   @override
   State<AddingCustomPlantView> createState() => _AddingCustomPlantViewState();
@@ -13,6 +19,7 @@ class AddingCustomPlantView extends StatefulWidget{
 class _AddingCustomPlantViewState extends State<AddingCustomPlantView> {
   @override
   Widget build(BuildContext context) {
+    const CategoryModel categoryModel=CategoryModel(plantName: 'gggg',image: ImagesApp.wheatImage);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Custom Plant',
@@ -40,7 +47,14 @@ class _AddingCustomPlantViewState extends State<AddingCustomPlantView> {
               mainAxisSpacing: 75,
             ),
             itemBuilder: (context, index) {
-              return const CustomItem();
+              return GestureDetector(
+                child: const CustomItem(),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                    return PlantView(category: categoryModel);
+                  }));
+                },
+              );
             }),
       )
     );

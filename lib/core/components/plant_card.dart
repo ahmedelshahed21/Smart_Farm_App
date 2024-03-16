@@ -18,7 +18,7 @@ class PlantCard extends StatelessWidget{
       width: width ?? 150,
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage(category.image),
+            image: AssetImage(category.image!),
             fit: BoxFit.fill
         ),
         borderRadius: BorderRadius.circular(radius ?? 16),

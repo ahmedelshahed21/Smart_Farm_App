@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smart_farm/constants.dart';
 import 'package:smart_farm/core/utils/assets_app.dart';
-import 'package:smart_farm/features/custom%20plant/presentation/views/adding_custom_plant_view.dart';
+import 'package:smart_farm/features/custom%20plant/presentation/views/custom_plants_view.dart';
 
 class CustomPlantContainer extends StatelessWidget{
   const CustomPlantContainer({super.key});
