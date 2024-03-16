@@ -2,24 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:smart_farm/components/circular_percent.dart';
 import 'package:smart_farm/core/components/custom_icon.dart';
 
-class ManualControlScreen extends StatefulWidget{
+class ManualControlView extends StatefulWidget{
 
-  static String id ='ManualControlScreen';
-  const ManualControlScreen({super.key});
+  static String id ='ManualControlView';
+  const ManualControlView({super.key});
 
   @override
-  State<ManualControlScreen> createState() => _ManualControlScreenState();
+  State<ManualControlView> createState() => _ManualControlViewState();
 }
 
-class _ManualControlScreenState extends State<ManualControlScreen> {
+class _ManualControlViewState extends State<ManualControlView> {
   @override
   Widget build(BuildContext context) {
     bool? ifPressed;
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-          backgroundColor: Colors.black
-      ),
+      appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(

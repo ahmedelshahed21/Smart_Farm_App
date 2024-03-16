@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/components/circular_percent.dart';
 
-class PercentagesScreen extends StatelessWidget{
-  const PercentagesScreen({super.key});
-  static String id='PercentagesScreen';
+class PercentagesView extends StatelessWidget{
+  const PercentagesView({super.key});
+  static String id='PercentagesView';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-      ),
+      appBar: AppBar(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:smart_farm/core/components/return_icon_button.dart';
 import 'package:smart_farm/core/utils/assets_app.dart';
 import 'package:smart_farm/features/custom%20plant/presentation/views/widgets/custom_item.dart';
 import 'package:smart_farm/features/custom%20plant/presentation/views/custom_plant_form_view.dart';
@@ -23,8 +22,6 @@ class _AddingCustomPlantViewState extends State<AddingCustomPlantView> {
     const CategoryModel categoryModel=CategoryModel(plantName: 'Custom',image: ImagesApp.wheatImage);
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        leading: const ReturnIconButton(),
         title: const Text('Custom Plant',
           style: TextStyle(
             fontWeight: FontWeight.bold
