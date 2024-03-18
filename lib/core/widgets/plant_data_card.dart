@@ -13,10 +13,10 @@ class PlantDataCard extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 25.0,horizontal: 16.0),
+      padding: const EdgeInsets.symmetric(vertical: 16.0,horizontal: 12.0),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: const Color(0xFF1C1B20),
+          color: kItemColor
       ),
       child: Column(
         children: [
@@ -54,10 +54,10 @@ class PlantDataCard extends StatelessWidget{
               ),
               const SizedBox(width: 5,),
               Text(unity,
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 16,
                     letterSpacing: 2,
-                    color: Colors.white.withOpacity(0.6),
+                    color: Colors.white70,
                     fontWeight: FontWeight.w500
                 ),
               ),

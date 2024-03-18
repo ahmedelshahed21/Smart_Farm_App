@@ -23,9 +23,9 @@ class CustomHorizontalListView extends StatelessWidget{
         Container(
           margin: const EdgeInsets.only(bottom: 20),
           padding:const EdgeInsets.only(top: 12) ,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               color: kPrimaryColor,
-              borderRadius: const BorderRadius.only(bottomLeft:Radius.circular(64))
+              borderRadius: BorderRadius.only(bottomLeft:Radius.circular(64))
           ),
           child: const Padding(
             padding: EdgeInsets.only(bottom: 8.0),

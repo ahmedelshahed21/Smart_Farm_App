@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/constants.dart';
-import 'package:smart_farm/core/components/custom_button1.dart';
-import 'package:smart_farm/core/components/custom_text_form_field.dart';
 import 'package:smart_farm/core/utils/functions/custom_snack_bar.dart';
+import 'package:smart_farm/core/widgets/default_button.dart';
+import 'package:smart_farm/core/widgets/custom_text_form_field.dart';
 import 'package:smart_farm/features/home/presentation/views/home_view.dart';
 
 
@@ -33,15 +33,15 @@ class _LoginSectionState extends State<LoginSection> {
               ),
             ],
           ),
-          CustomTextFormField(
-            contentPadding: const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
+          const CustomTextFormField(
+            contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
             labelText: 'USER_NAME',
             prefixIcon: Icons.alternate_email,
             prefixIconColor: Colors.black,
-            fillColor: kPrimaryColor.withOpacity(0.3),
             textInputType: TextInputType.emailAddress,
             hintText: 'USER_NAME',
           ),
+          const SizedBox(height: 7),
           CustomTextFormField(
             contentPadding: const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
             prefixIcon: Icons.lock_outline_rounded,
@@ -55,13 +55,13 @@ class _LoginSectionState extends State<LoginSection> {
                 obscureText=!obscureText;
               });
             },
-            fillColor: kPrimaryColor.withOpacity(0.3),
+
             hintText: 'PASSWORD',
           ),
-          const SizedBox(height: 40,),
+          const SizedBox(height:50),
           SizedBox(
             width: double.infinity,
-            child: CustomButton1(
+            child: DefaultButton(
                 buttonName: 'LOGIN',
                 borderColor: kPrimaryColor.withOpacity(0.6),
                 onTapped: (){

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_farm/components/circular_percent.dart';
-import 'package:smart_farm/core/components/custom_icon.dart';
+import 'package:smart_farm/core/widgets/circular_percent.dart';
+import 'package:smart_farm/core/widgets/custom_text_button.dart';
 
 class ManualControlView extends StatefulWidget{
 
@@ -14,7 +14,6 @@ class ManualControlView extends StatefulWidget{
 class _ManualControlViewState extends State<ManualControlView> {
   @override
   Widget build(BuildContext context) {
-    bool? ifPressed;
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -38,15 +37,24 @@ class _ManualControlViewState extends State<ManualControlView> {
                 const Text('Water',
                   style: TextStyle(
                     fontSize: 30,
+                    letterSpacing: 3,
                     color: Colors.blueAccent
                   ),
                 ),
-                CustomIcon(
-                    icon: Icons.play_arrow,
-                    backgroundColor: Colors.grey.withOpacity(0.1),
-                    radius: 12,
-                    onPressed:(){} ,
-                ),
+                SizedBox(
+                  height: 60,
+                  width: MediaQuery.of(context).size.width*0.22,
+                  child: CustomTextButton(
+                    child: 'Open',
+                    borderRadius: BorderRadius.circular(16),
+                    onPressed: (){},
+                  ),
+                )
+                // CustomIcon(
+                //     icon: Icons.play_arrow,
+                //     radius: 12,
+                //     onPressed:(){} ,
+                // ),
               ],
             ),
             Row(
@@ -55,18 +63,18 @@ class _ManualControlViewState extends State<ManualControlView> {
                 const Text('Roof',
                   style: TextStyle(
                     fontSize: 30,
+                    letterSpacing: 3
                   ),
                 ),
-                CustomIcon(
-                    icon: ifPressed==true ? Icons.play_arrow : Icons.stop,
-                    backgroundColor: Colors.grey.withOpacity(0.1),
-                    radius: 12,
-                    onPressed: (){
-                      setState(() {
-                        ifPressed=false;
-                      });
-                    },
-                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width*0.22,
+                  height: 60,
+                  child: CustomTextButton(
+                    child: 'Open',
+                    borderRadius: BorderRadius.circular(16),
+                    onPressed: (){},
+                  ),
+                )
               ],
             ),
             const SizedBox(height: 20),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_farm/core/components/custom_text_button.dart';
+import 'package:smart_farm/core/widgets/custom_text_button.dart';
 
 class PlantAction extends StatelessWidget{
   const PlantAction({super.key, this.onPressedManualButton, this.onPressedAutomaticButton});

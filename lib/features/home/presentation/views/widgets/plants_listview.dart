@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:smart_farm/core/widgets/plant_card.dart';
 import 'package:smart_farm/features/home/data/models/category_model.dart';
-import 'package:smart_farm/core/components/plant_card.dart';
 import 'package:smart_farm/features/plant/presentation/views/plant_view.dart';
 
 class PlantsListView extends StatelessWidget{

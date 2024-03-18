@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/constants.dart';
 
-class CustomButton1 extends StatelessWidget{
+class DefaultButton extends StatelessWidget{
   final String buttonName;
   final VoidCallback onTapped;
   final Color? borderColor;
-  const CustomButton1({super.key,required this.buttonName,required this.onTapped,this.borderColor});
+  const DefaultButton({super.key,required this.buttonName,required this.onTapped,this.borderColor});
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(

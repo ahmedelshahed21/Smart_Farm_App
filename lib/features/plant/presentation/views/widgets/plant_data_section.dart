@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/constants.dart';
-import 'package:smart_farm/core/components/plant_data_card.dart';
+import 'package:smart_farm/core/widgets/plant_data_card.dart';
+
 
 class PlantDataSection extends StatelessWidget {
   const PlantDataSection({super.key, this.water,this.temp,this.humidity,this.soilHumidity,});

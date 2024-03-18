@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:smart_farm/core/components/custom_text_form_field.dart';
 import 'package:smart_farm/constants.dart';
 import 'package:smart_farm/core/utils/functions/custom_snack_bar.dart';
-import '../../../../../core/components/custom_icon.dart';
+import 'package:smart_farm/core/utils/functions/underline_input_border.dart';
+import 'package:smart_farm/core/widgets/custom_icon.dart';
+import 'package:smart_farm/core/widgets/custom_text_form_field.dart';
 
 class BodyCustomPlantFormView extends StatelessWidget{
   const BodyCustomPlantFormView({super.key});
@@ -28,10 +29,10 @@ class BodyCustomPlantFormView extends StatelessWidget{
                       containerWidth: 45,
                       iconSize: 30,
                       icon: Icons.close,
-                      //backgroundColor: Colors.grey.withOpacity(0.1),
+                      backgroundColor: Colors.transparent,
                       radius: 16,
                       onPressed: (){
-                          Navigator.pop(context);
+                        Navigator.pop(context);
                       },
                     ),
                   ),
@@ -42,7 +43,7 @@ class BodyCustomPlantFormView extends StatelessWidget{
                       containerWidth: 45,
                       iconSize: 30,
                       icon: Icons.check,
-                      backgroundColor: Colors.grey.withOpacity(0.2),
+                      backgroundColor: kItemColor,
                       radius: 16,
                       onPressed: (){
                         if(formKey.currentState!.validate()){
@@ -58,7 +59,7 @@ class BodyCustomPlantFormView extends StatelessWidget{
               ),
               CircleAvatar(
                 radius: 64,
-                backgroundColor: kPrimaryColor.withOpacity(0.5),
+                backgroundColor: kPrimaryColor.withOpacity(0.6),
                 child: CustomIcon(
                   icon: Icons.camera_alt_outlined,
                   radius: 6,
@@ -67,83 +68,63 @@ class BodyCustomPlantFormView extends StatelessWidget{
                   },
                 )
               ),
-              TextFormField(
-                validator: (data){
-                  if(data!.isEmpty){
-                    return 'Field is required';
-                  }
-                  return null;
-                },
-                cursorColor: kPrimaryColor.withOpacity(0.6),
-                decoration: InputDecoration(
-                  prefixIcon:const Icon(Icons.title),
-                  prefixIconColor: Colors.white,
-                  hintText: 'Plant Name',
-                  hintStyle: TextStyle(
-                    fontWeight: FontWeight.normal,
-                    fontSize: 16,
-                    color: Colors.yellow.withOpacity(0.7)
-                  ),
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      width: 2,
-                      color: kPrimaryColor.withOpacity(0.6)
-                    )
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                       borderSide: BorderSide(
-                         width: 2,
-                        color: kPrimaryColor.withOpacity(0.6)
-                    )
-                  ),
-                  errorBorder: const UnderlineInputBorder(
-                      borderSide: BorderSide(
-                          width: 1,
-                          color: Colors.red
-                      )
-                  ),
-                  focusedErrorBorder: const UnderlineInputBorder(
-                      borderSide: BorderSide(
-                          width: 1,
-                          color: Colors.red
-                      )
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                child: TextFormField(
+                  validator: (data){
+                    if(data!.isEmpty){
+                      return 'Plant Name is required';
+                    }
+                    return null;
+                  },
+                  cursorColor: kPrimaryColor.withOpacity(0.6),
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  decoration: InputDecoration(
+                    prefixIcon:const Icon(Icons.title),
+                    prefixIconColor: Colors.white,
+                    hintText: 'Plant Name',
+                    hintStyle: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      fontSize: 16,
+                      color: Colors.yellow.withOpacity(0.7)
+                    ),
+                    enabledBorder: buildUnderlineInputBorder(color: kPrimaryColor.withOpacity(0.6)),
+                    focusedBorder: buildUnderlineInputBorder(color: kPrimaryColor.withOpacity(0.6)),
+                    errorBorder: buildUnderlineInputBorder(color: Colors.red),
+                    focusedErrorBorder: buildUnderlineInputBorder(color: Colors.red),
                   ),
                 ),
               ),
 
               const SizedBox(height: 30),
-              CustomTextFormField(
+              const CustomTextFormField(
                   prefixIcon: Icons.water_drop_outlined,
                   prefixIconColor: Colors.blue,
                   labelText: 'Watering',
                   hintText: 'How much water do this plant need ?',
                   textInputType: TextInputType.number,
-                  fillColor: kPrimaryColor.withOpacity(0.3),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 5,horizontal: 20)
+                  contentPadding: EdgeInsets.symmetric(vertical: 5,horizontal: 20)
               ),
-              CustomTextFormField(
+              const CustomTextFormField(
                   prefixIcon: Icons.sunny_snowing,
                   labelText: 'Temperature',
                   prefixIconColor: Colors.orangeAccent,
                   hintText: '',
                   textInputType: TextInputType.number,
-                  fillColor: kPrimaryColor.withOpacity(0.3),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 5,horizontal: 20)
+                  contentPadding: EdgeInsets.symmetric(vertical: 5,horizontal: 20)
               ),
               CustomTextFormField(
                   prefixIcon: Icons.water,labelText: 'Humidity',
                   prefixIconColor: kPrimaryColor,
                   hintText: '',textInputType: TextInputType.number,
-                  fillColor: kPrimaryColor.withOpacity(0.3),
                   contentPadding: const EdgeInsets.symmetric(vertical: 5,horizontal: 20)
               ),
-              CustomTextFormField(
+              const CustomTextFormField(
                   prefixIcon: Icons.water,
-                  prefixIconColor: Colors.brown[300],
+                  prefixIconColor: Colors.brown,
                   labelText: 'Soil Humidity',
                   hintText: '',textInputType: TextInputType.number,
-                  fillColor: kPrimaryColor.withOpacity(0.3),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 5,horizontal: 20)
+                  contentPadding: EdgeInsets.symmetric(vertical: 5,horizontal: 20)
               ),
             ],
           ),
@@ -151,4 +132,6 @@ class BodyCustomPlantFormView extends StatelessWidget{
       ),
     );
   }
+
+
 }

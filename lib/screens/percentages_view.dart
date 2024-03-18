@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_farm/components/circular_percent.dart';
+import 'package:smart_farm/core/widgets/circular_percent.dart';
 
 class PercentagesView extends StatelessWidget{
   const PercentagesView({super.key});

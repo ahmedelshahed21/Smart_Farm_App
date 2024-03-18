@@ -8,10 +8,6 @@ import 'package:smart_farm/features/plant/presentation/views/plant_view.dart';
 class AddingCustomPlantView extends StatefulWidget{
   const AddingCustomPlantView({super.key});
   static String id='CustomPlantView';
-  
-  
-  
-
   @override
   State<AddingCustomPlantView> createState() => _AddingCustomPlantViewState();
 }
