@@ -1,12 +1,31 @@
-
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smart_farm/constants.dart';
 import 'package:smart_farm/core/utils/assets_app.dart';
 
-class AnimationSection extends StatelessWidget{
+class AnimationSection extends StatefulWidget {
   const AnimationSection({super.key});
 
+  @override
+  State<AnimationSection> createState() => _AnimationSectionState();
+
+}
+
+class _AnimationSectionState extends State<AnimationSection> with SingleTickerProviderStateMixin {
+
+  AnimationController? animationController;
+  Animation<double>? fadingAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    animationController = AnimationController(
+        vsync: this,
+        duration: const Duration(seconds: 2)
+    );
+    fadingAnimation=Tween<double>(begin: .3,end: 1.2).animate(animationController!);
+    animationController?.repeat(reverse: true);
+  }
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -29,12 +48,15 @@ class AnimationSection extends StatelessWidget{
                   letterSpacing: 3,
                 ),
               ),
-              Text('\nSmartFarm',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                  color: kPrimaryColor,
-                  letterSpacing: 2,
+              FadeTransition(
+                opacity: fadingAnimation!,
+                child: const Text('\nSmartFarm',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: kPrimaryColor,
+                    letterSpacing: 2,
+                  ),
                 ),
               ),
             ],
