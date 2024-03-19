@@ -27,6 +27,11 @@ class _AnimationSectionState extends State<AnimationSection> with SingleTickerPr
     animationController?.repeat(reverse: true);
   }
   @override
+  void dispose() {
+    animationController?.dispose();
+    super.dispose();
+  }
+  @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.bottomCenter,

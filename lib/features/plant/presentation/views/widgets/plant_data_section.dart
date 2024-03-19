@@ -20,28 +20,30 @@ class PlantDataSection extends StatelessWidget {
             //color: kPrimaryColor
           ),
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 15),
         Row(
           children: [
+            const SizedBox(width: 5.0),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                PlantDataCard(name: 'Watering',icon: Icons.water_drop_outlined,iconColo: Colors.blue,value: water ?? 22.5, unity: 'L'),
+                PlantDataCard(name: 'Watering',icon: Icons.water_drop_outlined,iconColo: Colors.blue,value: water ?? 0, unity: 'L'),
                 const SizedBox(height: 5.0),
-                PlantDataCard(name: 'Humidity',icon: Icons.water,iconColo: kPrimaryColor,value: 22.22, unity: '%'),
+                PlantDataCard(name: 'Humidity',icon: Icons.water,iconColo: kPrimaryColor,value: humidity?? 69.5, unity: '%'),
               ],
             ),
             const SizedBox(width: 5.0),
-            const Expanded(
+            Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  PlantDataCard(name: 'Temperature',icon: Icons.sunny_snowing,iconColo: Colors.orange,value: 22, unity: 'C'),
-                  SizedBox(height: 5.0),
-                  PlantDataCard(name: 'Soil Humidity',icon: Icons.water,iconColo: Colors.brown,value: 22.4447, unity: '%'),
+                  PlantDataCard(name: 'Temperature',icon: Icons.sunny_snowing,iconColo: Colors.orange,value: temp ?? 17, unity: 'C'),
+                  const SizedBox(height: 5.0),
+                  PlantDataCard(name: 'Soil Humidity',icon: Icons.water,iconColo: Colors.brown,value: soilHumidity ?? 22, unity: '%'),
                 ],
               ),
             ),
+            const SizedBox(width: 5.0),
           ],
         ),
       ],

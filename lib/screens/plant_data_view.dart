@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:smart_farm/constants.dart';
 import 'package:smart_farm/core/widgets//plant_action.dart';
 import 'package:smart_farm/core/utils/assets_app.dart';
+import 'package:smart_farm/features/home/data/models/plant_model.dart';
 
 class PlantDataView extends StatelessWidget{
-  const PlantDataView({super.key});
-
+  const PlantDataView({super.key, required this.category});
+  final PlantModel category;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -38,8 +39,8 @@ class PlantDataView extends StatelessWidget{
                     collapsedIconColor: kPrimaryColor,
                     iconColor: Colors.red,
                     collapsedTextColor: kPrimaryColor,
-                    collapsedBackgroundColor: Colors.black.withOpacity(0.4),
-                    backgroundColor: Colors.black.withOpacity(0.4),
+                    collapsedBackgroundColor: kItemColor,
+                    backgroundColor: kItemColor,
                     tilePadding: const EdgeInsets.only(left: 0.0),
                     leading: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
@@ -58,7 +59,7 @@ class PlantDataView extends StatelessWidget{
                         padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 12.0),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
-                            color: Colors.black.withOpacity(0.4)
+                            color: kItemColor
                         ),
                         child: Text('It is a crucial food crop globally.'
                             '\nRich in nutrients, including carbohydrates and proteins. '
@@ -75,8 +76,6 @@ class PlantDataView extends StatelessWidget{
                   ),
                 ),
                 const SizedBox(height: 20,),
-
-
                 Row(
                   children: [
 
@@ -112,7 +111,7 @@ class PlantDataView extends StatelessWidget{
                                 crossAxisAlignment: CrossAxisAlignment.baseline,
                                 textBaseline: TextBaseline.alphabetic,
                                 children: [
-                                  Text('25',
+                                  const Text('25',
                                     style: TextStyle(
                                         fontSize: 40,
                                         letterSpacing: 2,
@@ -130,11 +129,6 @@ class PlantDataView extends StatelessWidget{
                                     ),
                                   ),
                                 ],
-                              ),
-                              Text('every day',
-                                style: TextStyle(
-                                  color: Colors.white.withOpacity(0.6),
-                                ),
                               ),
                             ],
                           ),
@@ -170,7 +164,7 @@ class PlantDataView extends StatelessWidget{
                                 crossAxisAlignment: CrossAxisAlignment.baseline,
                                 textBaseline: TextBaseline.alphabetic,
                                 children: [
-                                  Text('25',
+                                  const Text('25',
                                     style: TextStyle(
                                         fontSize: 40,
                                         letterSpacing: 2,
@@ -192,7 +186,6 @@ class PlantDataView extends StatelessWidget{
                             ],
                           ),
                         ),
-
                       ],
                     ),
                     const SizedBox(width: 5,),
@@ -228,7 +221,7 @@ class PlantDataView extends StatelessWidget{
                                 crossAxisAlignment: CrossAxisAlignment.baseline,
                                 textBaseline: TextBaseline.alphabetic,
                                 children: [
-                                  Text('25',
+                                  const Text('25',
                                     style: TextStyle(
                                         fontSize: 40,
                                         letterSpacing: 2,
@@ -282,7 +275,7 @@ class PlantDataView extends StatelessWidget{
                                 crossAxisAlignment: CrossAxisAlignment.baseline,
                                 textBaseline: TextBaseline.alphabetic,
                                 children: [
-                                  Text('25',
+                                  const Text('25',
                                     style: TextStyle(
                                         fontSize: 40,
                                         letterSpacing: 2,

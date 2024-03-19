@@ -113,11 +113,11 @@ class BodyCustomPlantFormView extends StatelessWidget{
                   textInputType: TextInputType.number,
                   contentPadding: EdgeInsets.symmetric(vertical: 5,horizontal: 20)
               ),
-              CustomTextFormField(
+              const CustomTextFormField(
                   prefixIcon: Icons.water,labelText: 'Humidity',
                   prefixIconColor: kPrimaryColor,
                   hintText: '',textInputType: TextInputType.number,
-                  contentPadding: const EdgeInsets.symmetric(vertical: 5,horizontal: 20)
+                  contentPadding: EdgeInsets.symmetric(vertical: 5,horizontal: 20)
               ),
               const CustomTextFormField(
                   prefixIcon: Icons.water,

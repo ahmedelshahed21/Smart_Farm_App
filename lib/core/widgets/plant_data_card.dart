@@ -45,7 +45,7 @@ class PlantDataCard extends StatelessWidget{
             textBaseline: TextBaseline.alphabetic,
             children: [
               Text('${value.round()}',
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 40,
                     letterSpacing: 2,
                     color: kPrimaryColor,

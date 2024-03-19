@@ -8,4 +8,5 @@ abstract class ImagesApp{
   static const riceImage='assets/images/Rice.jpg';
   static const cottonImage='assets/images/Cotton.png';
   static const cornImage='assets/images/Corn.webp';
+  static const blackImage='assets/images/blackImage.jpg';
 }

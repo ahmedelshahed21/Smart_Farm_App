@@ -1,4 +1,4 @@
-class CategoryModel {
+class PlantModel {
   final String? image;
   final String plantName;
   final String? content;
@@ -7,5 +7,5 @@ class CategoryModel {
   final double? humidity;
   final double? soilHumidity;
 
-  const CategoryModel({required this.plantName, this.content, this.image, this.water, this.temp, this.humidity, this.soilHumidity});
+  const PlantModel({required this.plantName, this.content, this.image, this.water, this.temp, this.humidity, this.soilHumidity});
 }

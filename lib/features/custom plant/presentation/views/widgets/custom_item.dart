@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/constants.dart';
 
+
 class CustomItem extends StatelessWidget{
-  const CustomItem({super.key});
+  const CustomItem({super.key,required this.customPlantName,this.customPlantImage});
+  final String customPlantName;
+  final String? customPlantImage;
 
   @override
   Widget build(BuildContext context) {
@@ -14,22 +17,31 @@ class CustomItem extends StatelessWidget{
         color: kPrimaryColor.withOpacity(0.8),
         borderRadius: BorderRadius.circular(12),
       ),
-      child: const Column(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Watermelon',
-            style: TextStyle(
+          Text(customPlantName,
+            style: const TextStyle(
               fontSize: 18,
+              color: Colors.black,
               overflow: TextOverflow.visible,
               fontWeight: FontWeight.w500
             ),
           ),
-          SizedBox(height:10),
+          const SizedBox(height:10),
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(Icons.delete,
-                color: Colors.black,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(6),
+                child: customPlantImage!=null ? Image.asset(customPlantImage!,
+                  height: 30,
+                ) : Container(
+                  color: Colors.transparent,
+                ),
+              ),
+              const Icon(Icons.delete,
+                color: kItemColor,
               ),
             ],
           )

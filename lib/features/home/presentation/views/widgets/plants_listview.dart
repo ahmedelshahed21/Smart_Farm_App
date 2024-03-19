@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/core/widgets/plant_card.dart';
-import 'package:smart_farm/features/home/data/models/category_model.dart';
+import 'package:smart_farm/features/home/data/models/plant_model.dart';
 import 'package:smart_farm/features/plant/presentation/views/plant_view.dart';
 
 class PlantsListView extends StatelessWidget{
   const PlantsListView({super.key});
-  final List<CategoryModel> categories= const[
-    CategoryModel(image: 'assets/images/Wheat.jpeg', plantName: 'Wheat'),
-    CategoryModel(image: 'assets/images/Rice.jpg', plantName: 'Rice'),
-    CategoryModel(image: 'assets/images/Cotton.png', plantName: 'Cotton'),
-    CategoryModel(image: 'assets/images/Corn.webp', plantName: 'Corn'),
+  final List<PlantModel> categories= const[
+    PlantModel(image: 'assets/images/Wheat.jpeg', plantName: 'Wheat'),
+    PlantModel(image: 'assets/images/Rice.jpg', plantName: 'Rice'),
+    PlantModel(image: 'assets/images/Cotton.png', plantName: 'Cotton'),
+    PlantModel(image: 'assets/images/Corn.webp', plantName: 'Corn'),
   ];
 
   @override

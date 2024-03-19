@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:smart_farm/core/utils/assets_app.dart';
+import 'package:smart_farm/features/custom%20plant/presentation/views/custom_plant_data_view.dart';
 import 'package:smart_farm/features/custom%20plant/presentation/views/widgets/custom_item.dart';
 import 'package:smart_farm/features/custom%20plant/presentation/views/custom_plant_form_view.dart';
-import 'package:smart_farm/features/home/data/models/category_model.dart';
-import 'package:smart_farm/features/plant/presentation/views/plant_view.dart';
+import 'package:smart_farm/features/home/data/models/plant_model.dart';
+
 
 class AddingCustomPlantView extends StatefulWidget{
   const AddingCustomPlantView({super.key});
@@ -13,14 +13,19 @@ class AddingCustomPlantView extends StatefulWidget{
 }
 
 class _AddingCustomPlantViewState extends State<AddingCustomPlantView> {
+
+
+  final List<PlantModel> customPlants=[
+    const PlantModel(plantName: 'watermelon'),
+
+  ];
   @override
   Widget build(BuildContext context) {
-    const CategoryModel categoryModel=CategoryModel(plantName: 'Custom',image: ImagesApp.wheatImage);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Custom Plant',
           style: TextStyle(
-            fontWeight: FontWeight.bold
+            fontWeight: FontWeight.bold,
         ),),
       ),
       floatingActionButton: FloatingActionButton(
@@ -30,11 +35,10 @@ class _AddingCustomPlantViewState extends State<AddingCustomPlantView> {
           Navigator.pushNamed(context, CustomPlantFormView.id);
         },
       ),
-
       body: Padding(
         padding: const EdgeInsets.only(top: 20.0,bottom: 10.0),
         child: GridView.builder(
-            itemCount: 3,
+            itemCount: customPlants.length,
             clipBehavior: Clip.none,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
@@ -44,10 +48,10 @@ class _AddingCustomPlantViewState extends State<AddingCustomPlantView> {
             ),
             itemBuilder: (context, index) {
               return GestureDetector(
-                child: const CustomItem(),
+                child: CustomItem(customPlantName: customPlants[index].plantName,customPlantImage: customPlants[index].image),
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context){
-                    return const PlantView(category: categoryModel);
+                    return CustomPlantDataView(category: customPlants[index]);
                   }));
                 },
               );
