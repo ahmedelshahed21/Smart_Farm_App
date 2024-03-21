@@ -9,16 +9,18 @@ class PlantDataCard extends StatelessWidget{
   final String unity;
   final IconData icon;
   final Color iconColo;
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 16.0,horizontal: 12.0),
+      padding: const EdgeInsets.symmetric(vertical: 12.0),
+      // height: MediaQuery.of(context).size.height*0.16,
+      // width: MediaQuery.of(context).size.width*width!,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: kItemColor
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

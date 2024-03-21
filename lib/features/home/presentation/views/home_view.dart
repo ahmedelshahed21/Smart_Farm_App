@@ -15,7 +15,6 @@ class HomeView extends StatelessWidget{
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 24,
-            //color: const Color(0xFF1C1B20),
           ),
         ),
         centerTitle: true,

@@ -41,7 +41,7 @@ class _LoginSectionState extends State<LoginSection> {
             textInputType: TextInputType.emailAddress,
             hintText: 'USER_NAME',
           ),
-          const SizedBox(height: 7),
+          const SizedBox(height: 5),
           CustomTextFormField(
             contentPadding: const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
             prefixIcon: Icons.lock_outline_rounded,
@@ -58,7 +58,7 @@ class _LoginSectionState extends State<LoginSection> {
 
             hintText: 'PASSWORD',
           ),
-          const SizedBox(height:40),
+          const SizedBox(height:50),
           SizedBox(
             width: double.infinity,
             child: DefaultButton(
@@ -73,8 +73,7 @@ class _LoginSectionState extends State<LoginSection> {
                   }
                 }
             ),
-          )
-
+          ),
         ],
       ),
     );

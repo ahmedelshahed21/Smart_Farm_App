@@ -10,26 +10,28 @@ class CustomHorizontalListView extends StatelessWidget{
     return Column(
       children: [
         Container(
-          color: kPrimaryColor,
-          width: double.infinity,
-          padding: const EdgeInsets.only(left: 18),
-          child: const Text('Plants',
-            style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold
-            ),
-          ),
-        ),
-        Container(
-          margin: const EdgeInsets.only(bottom: 20),
+          margin: const EdgeInsets.only(bottom: 30),
           padding:const EdgeInsets.only(top: 12) ,
           decoration: const BoxDecoration(
               color: kPrimaryColor,
               borderRadius: BorderRadius.only(bottomLeft:Radius.circular(64))
           ),
-          child: const Padding(
-            padding: EdgeInsets.only(bottom: 8.0),
-            child: PlantsListView(),
+          child: Column(
+            children: [
+              Container(
+                color: kPrimaryColor,
+                width: double.infinity,
+                padding: const EdgeInsets.only(left: 24),
+                child: const Text('Plants',
+                  style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold
+                  ),
+                ),
+              ),
+              const SizedBox(height: 5,),
+              const PlantsListView(),
+            ],
           ),
         ),
       ],

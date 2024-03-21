@@ -26,7 +26,7 @@ class CustomPlantDataView extends StatelessWidget{
             const Expanded(child: SizedBox()),
             CustomExpansionTile(title: 'Notes',content: category.content),
             const SizedBox(height: 30),
-            PlantDataSection(water: category.water,temp: category.temp,humidity: category.soilHumidity),
+            PlantDataSection(water: category.water,temp: category.temp,humidity: category.soilHumidity,),
             const Expanded(child: SizedBox()),
             PlantAction(
               onPressedManualButton: (){

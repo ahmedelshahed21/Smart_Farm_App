@@ -15,12 +15,13 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*.07),
         child: ListView(
-          children: const [
+          children: [
             AnimationSection(),
-            SizedBox(height: 40),
+            SizedBox(height: MediaQuery.of(context).size.height*0.1),
             LoginSection(),
+            SizedBox(height: MediaQuery.of(context).size.height*0.1),
           ],
         ),
       ),

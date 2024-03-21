@@ -19,19 +19,16 @@ class PlantView extends StatelessWidget{
         actions: [PlantCard(category: category, width: 80, height: 50, radius: 12.0, fontSize: 14.0, fontWeight: FontWeight.w600, padding: const EdgeInsets.only(top: 2.0,left: 7.0),),]
       ),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal:12.0),
+          padding: EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width*.04),
           child: Column(
             children: [
               const Expanded(child: SizedBox()),
-              const CustomExpansionTile(
+              CustomExpansionTile(
                 title: 'OverView',
-                content: 'It is a crucial food crop globally.'
-                '\nRich in nutrients, including carbohydrates and proteins. '
-               '\nCultivated in diverse climates worldwide.',
-
+                content: category.content,
               ),
-              const SizedBox(height: 30),
-              const PlantDataSection(water: 25),
+              const Expanded(child: SizedBox()),
+              PlantDataSection(water: category.water,temp: category.temp,humidity: category.humidity,soilHumidity: category.soilHumidity),
               const Expanded(child: SizedBox()),
               PlantAction(
                 onPressedManualButton: (){

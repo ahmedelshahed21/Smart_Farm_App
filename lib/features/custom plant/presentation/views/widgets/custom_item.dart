@@ -29,18 +29,18 @@ class CustomItem extends StatelessWidget{
             ),
           ),
           const SizedBox(height:10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(6),
-                child: customPlantImage!=null ? Image.asset(customPlantImage!,
-                  height: 30,
-                ) : Container(
-                  color: Colors.transparent,
-                ),
-              ),
-              const Icon(Icons.delete,
+              // ClipRRect(
+              //   borderRadius: BorderRadius.circular(6),
+              //   child: customPlantImage!=null ? Image.asset(customPlantImage!,
+              //     height: 30,
+              //   ) : Container(
+              //     color: Colors.transparent,
+              //   ),
+              // ),
+              Icon(Icons.delete,
                 color: kItemColor,
               ),
             ],

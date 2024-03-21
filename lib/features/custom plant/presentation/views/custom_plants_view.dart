@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_farm/core/utils/assets_app.dart';
 import 'package:smart_farm/features/custom%20plant/presentation/views/custom_plant_data_view.dart';
 import 'package:smart_farm/features/custom%20plant/presentation/views/widgets/custom_item.dart';
 import 'package:smart_farm/features/custom%20plant/presentation/views/custom_plant_form_view.dart';
@@ -17,7 +18,8 @@ class _AddingCustomPlantViewState extends State<AddingCustomPlantView> {
 
   final List<PlantModel> customPlants=[
     const PlantModel(plantName: 'watermelon'),
-
+    const PlantModel(plantName: 'watermelon',image: ImagesApp.cottonImage,water: 10.5,temp: 5,humidity: 7,soilHumidity: 3,content: 'lllipgfcsfdv'),
+    const PlantModel(plantName: 'watermelon',water: 10.5,temp: 5,humidity: 7,soilHumidity: 3,content: ''),
   ];
   @override
   Widget build(BuildContext context) {

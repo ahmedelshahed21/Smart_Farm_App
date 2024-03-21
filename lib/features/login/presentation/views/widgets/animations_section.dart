@@ -21,7 +21,7 @@ class _AnimationSectionState extends State<AnimationSection> with SingleTickerPr
     super.initState();
     animationController = AnimationController(
         vsync: this,
-        duration: const Duration(seconds: 2)
+        duration: const Duration(seconds: 1)
     );
     fadingAnimation=Tween<double>(begin: .3,end: 1.2).animate(animationController!);
     animationController?.repeat(reverse: true);
@@ -33,40 +33,38 @@ class _AnimationSectionState extends State<AnimationSection> with SingleTickerPr
   }
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.bottomCenter,
+    return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        SizedBox(
-            height: 250,
-            width: 210,
-            child: Lottie.asset(AnimationsApp.cornAnimation)
+        Stack(
+          alignment: Alignment.bottomLeft,
+          children: [
+            SizedBox(
+                height: MediaQuery.of(context).size.height*0.3,
+                width: MediaQuery.of(context).size.height*0.4,
+                child: Lottie.asset(AnimationsApp.cornAnimation)
+            ),
+            const Text('Welcome to\n\n',
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+                color: Colors.white,
+                letterSpacing: 3,
+              ),
+            ),
+          ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 5.0),
-          child: Row(
-            children: [
-              const Text('Welcome to\n',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
-                  color: Colors.white,
-                  letterSpacing: 3,
-                ),
-              ),
-              FadeTransition(
-                opacity: fadingAnimation!,
-                child: const Text('\nSmartFarm',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    color: kPrimaryColor,
-                    letterSpacing: 2,
-                  ),
-                ),
-              ),
-            ],
+        FadeTransition(
+          opacity: fadingAnimation!,
+          child: const Text('SmartFarm',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+              color: kPrimaryColor,
+              letterSpacing: 2,
+            ),
           ),
-
         ),
       ],
     );
