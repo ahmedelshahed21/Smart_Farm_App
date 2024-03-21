@@ -8,7 +8,7 @@ class PlantAction extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.04),
+      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.01),
       child: Row(
         children: [
           Expanded(

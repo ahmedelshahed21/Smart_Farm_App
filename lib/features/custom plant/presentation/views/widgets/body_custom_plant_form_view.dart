@@ -15,7 +15,7 @@ class BodyCustomPlantFormView extends StatelessWidget{
       key: formKey,
       child: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*.07),
           child: Column(
             children: [
               Row(
@@ -69,7 +69,7 @@ class BodyCustomPlantFormView extends StatelessWidget{
                 )
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.03),
                 child: TextFormField(
                   validator: (data){
                     if(data!.isEmpty){
@@ -96,35 +96,35 @@ class BodyCustomPlantFormView extends StatelessWidget{
                 ),
               ),
 
-              const SizedBox(height: 30),
-              const CustomTextFormField(
+              SizedBox(height: MediaQuery.of(context).size.height*0.04),
+              CustomTextFormField(
                   prefixIcon: Icons.water_drop_outlined,
                   prefixIconColor: Colors.blue,
                   labelText: 'Watering',
                   hintText: 'How much water do this plant need ?',
                   textInputType: TextInputType.number,
-                  contentPadding: EdgeInsets.symmetric(vertical: 5,horizontal: 20)
+                  contentPadding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*0.01,horizontal: MediaQuery.of(context).size.width*0.05)
               ),
-              const CustomTextFormField(
+              CustomTextFormField(
                   prefixIcon: Icons.sunny_snowing,
                   labelText: 'Temperature',
                   prefixIconColor: Colors.orangeAccent,
                   hintText: '',
                   textInputType: TextInputType.number,
-                  contentPadding: EdgeInsets.symmetric(vertical: 5,horizontal: 20)
+                  contentPadding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*0.01,horizontal: MediaQuery.of(context).size.width*0.05)
               ),
-              const CustomTextFormField(
+              CustomTextFormField(
                   prefixIcon: Icons.water,labelText: 'Humidity',
                   prefixIconColor: kPrimaryColor,
                   hintText: '',textInputType: TextInputType.number,
-                  contentPadding: EdgeInsets.symmetric(vertical: 5,horizontal: 20)
+                  contentPadding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*0.01,horizontal: MediaQuery.of(context).size.width*0.05)
               ),
-              const CustomTextFormField(
+              CustomTextFormField(
                   prefixIcon: Icons.water,
                   prefixIconColor: Colors.brown,
                   labelText: 'Soil Humidity',
                   hintText: '',textInputType: TextInputType.number,
-                  contentPadding: EdgeInsets.symmetric(vertical: 5,horizontal: 20)
+                  contentPadding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*0.01,horizontal: MediaQuery.of(context).size.width*0.05)
               ),
             ],
           ),

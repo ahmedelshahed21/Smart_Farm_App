@@ -9,7 +9,7 @@ class CustomExpansionTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return content != null ?
       Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*.03),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: kItemColor
@@ -22,8 +22,8 @@ class CustomExpansionTile extends StatelessWidget {
         iconColor: Colors.red,
         collapsedTextColor: Colors.white,
         textColor: kPrimaryColor,
-        collapsedBackgroundColor: const Color(0xFF1C1B20),
-        backgroundColor: const Color(0xFF1C1B20),
+        collapsedBackgroundColor: kItemColor,
+        backgroundColor: kItemColor,
         tilePadding: const EdgeInsets.only(left: 0.0),
         title: Text('\t $title',
           style: const TextStyle(

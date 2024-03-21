@@ -25,7 +25,6 @@ class CustomTextButton extends StatelessWidget{
       onPressed: onPressed,
       child: Text(child,
         style: TextStyle(
-          height: 2,
           color: textColor ?? Colors.black ,
           fontWeight: FontWeight.w600,
           fontSize: 18

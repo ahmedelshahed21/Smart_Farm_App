@@ -10,7 +10,6 @@ import 'package:smart_farm/screens/percentages_view.dart';
 
 
 void main() {
-  // runApp(DevicePreview(builder: (context) => const SmartFarmApp()));
   runApp(const SmartFarmApp());
 }
 

@@ -21,60 +21,63 @@ class _LoginSectionState extends State<LoginSection> {
     // TODO: implement build
     return Form(
       key: formKey,
-      child: Column(
-        children: [
-          const Row(
-            children: [
-              Text('LOGIN',
-                style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.02),
+        child: Column(
+          children: [
+            const Row(
+              children: [
+                Text('LOGIN',
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold
+                  ),
                 ),
-              ),
-            ],
-          ),
-          const CustomTextFormField(
-            contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
-            labelText: 'USER_NAME',
-            prefixIcon: Icons.alternate_email,
-            prefixIconColor: Colors.black,
-            textInputType: TextInputType.emailAddress,
-            hintText: 'USER_NAME',
-          ),
-          const SizedBox(height: 5),
-          CustomTextFormField(
-            contentPadding: const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
-            prefixIcon: Icons.lock_outline_rounded,
-            prefixIconColor: Colors.black,
-            labelText: 'PASSWORD',
-            textInputType: TextInputType.emailAddress,
-            obscureText: obscureText,
-            suffixIcon: obscureText ? Icons.visibility_off : Icons.visibility,
-            suffixOnPressed: (){
-              setState(() {
-                obscureText=!obscureText;
-              });
-            },
-
-            hintText: 'PASSWORD',
-          ),
-          const SizedBox(height:50),
-          SizedBox(
-            width: double.infinity,
-            child: DefaultButton(
-                buttonName: 'LOGIN',
-                borderColor: kPrimaryColor.withOpacity(0.6),
-                onTapped: (){
-                  if(formKey.currentState!.validate()){
-                    Navigator.pushReplacementNamed(context, HomeView.id);
-                  }
-                  else{
-                    customSnackBar(context,'  Invalid Values');
-                  }
-                }
+              ],
             ),
-          ),
-        ],
+            CustomTextFormField(
+              contentPadding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*0.02,horizontal: MediaQuery.of(context).size.width*0.05),
+              labelText: 'USER_NAME',
+              prefixIcon: Icons.alternate_email,
+              prefixIconColor: Colors.black,
+              textInputType: TextInputType.emailAddress,
+              hintText: 'USER_NAME',
+            ),
+            const SizedBox(height: 5),
+            CustomTextFormField(
+              contentPadding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*0.02,horizontal: MediaQuery.of(context).size.width*0.05),
+              prefixIcon: Icons.lock_outline_rounded,
+              prefixIconColor: Colors.black,
+              labelText: 'PASSWORD',
+              textInputType: TextInputType.emailAddress,
+              obscureText: obscureText,
+              suffixIcon: obscureText ? Icons.visibility_off : Icons.visibility,
+              suffixOnPressed: (){
+                setState(() {
+                  obscureText=!obscureText;
+                });
+              },
+
+              hintText: 'PASSWORD',
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height*0.05),
+            SizedBox(
+              width: double.infinity,
+              child: DefaultButton(
+                  buttonName: 'LOGIN',
+                  borderColor: kPrimaryColor.withOpacity(0.6),
+                  onPressed: (){
+                    if(formKey.currentState!.validate()){
+                      Navigator.pushReplacementNamed(context, HomeView.id);
+                    }
+                    else{
+                      customSnackBar(context,'  Invalid Values');
+                    }
+                  }
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

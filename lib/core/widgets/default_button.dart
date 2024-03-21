@@ -3,13 +3,13 @@ import 'package:smart_farm/constants.dart';
 
 class DefaultButton extends StatelessWidget{
   final String buttonName;
-  final VoidCallback onTapped;
+  final VoidCallback onPressed;
   final Color? borderColor;
-  const DefaultButton({super.key,required this.buttonName,required this.onTapped,this.borderColor});
+  const DefaultButton({super.key,required this.buttonName,required this.onPressed,this.borderColor});
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: onTapped,
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(
           backgroundColor: Colors.black,
           shape: RoundedRectangleBorder(

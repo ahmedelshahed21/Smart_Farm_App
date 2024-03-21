@@ -60,9 +60,9 @@ class _AnimationSectionState extends State<AnimationSection> with SingleTickerPr
           child: const Text('SmartFarm',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 20,
+              fontSize: 28,
               color: kPrimaryColor,
-              letterSpacing: 2,
+              letterSpacing: 3,
             ),
           ),
         ),

@@ -19,7 +19,7 @@ class PlantView extends StatelessWidget{
         actions: [PlantCard(category: category, width: 80, height: 50, radius: 12.0, fontSize: 14.0, fontWeight: FontWeight.w600, padding: const EdgeInsets.only(top: 2.0,left: 7.0),),]
       ),
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width*.04),
+          padding: EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width*.07),
           child: Column(
             children: [
               const Expanded(child: SizedBox()),
