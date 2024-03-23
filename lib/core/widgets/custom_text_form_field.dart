@@ -21,6 +21,10 @@ class CustomTextFormField extends StatelessWidget {
   switch(labelText){
     case 'USER_NAME' : return 'USER_NAME'.toLowerCase();
     case 'PASSWORD' : return 'PASSWORD'.toLowerCase();
+    case 'Watering' : return 'Watering';
+    case 'Temperature' : return 'Temperature';
+    case 'Humidity' : return 'Humidity';
+    case 'Soil Humidity' : return 'Soil Humidity';
     }
     return 'Filed';
   }

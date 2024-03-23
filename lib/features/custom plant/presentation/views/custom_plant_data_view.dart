@@ -8,7 +8,7 @@ import 'package:smart_farm/screens/manual_control_view.dart';
 import 'package:smart_farm/screens/percentages_view.dart';
 
 class CustomPlantDataView extends StatelessWidget{
-  static String id='PlantView';
+  static String id='CustomPlantView';
   const CustomPlantDataView({super.key, required this.category});
   final PlantModel category;
 
@@ -20,13 +20,13 @@ class CustomPlantDataView extends StatelessWidget{
             PlantCard(category: category, width: 80, height: 50, radius: 12.0, fontSize: 14.0, fontWeight: FontWeight.w600, padding: const EdgeInsets.only(top: 5.0,left: 2.0),),]
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal:12.0),
+        padding: EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width*.07),
         child: Column(
           children: [
             const Expanded(child: SizedBox()),
             CustomExpansionTile(title: 'Notes',content: category.content),
-            const SizedBox(height: 30),
-            PlantDataSection(water: category.water,temp: category.temp,humidity: category.soilHumidity),
+            const Expanded(child: SizedBox()),
+            PlantDataSection(water: category.water,temp: category.temp,humidity: category.humidity,soilHumidity: category.soilHumidity,),
             const Expanded(child: SizedBox()),
             PlantAction(
               onPressedManualButton: (){

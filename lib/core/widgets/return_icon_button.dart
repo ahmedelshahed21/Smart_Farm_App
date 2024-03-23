@@ -8,10 +8,9 @@ class ReturnIconButton extends StatelessWidget {
       onPressed: () {
         Navigator.pop(context);
       },
+      iconSize: 20,
       icon: const Center(
-        child: Icon(Icons.arrow_back_ios,
-          size: 20,
-        ),
+        child: Icon(Icons.arrow_back_ios,),
       ),
     );
   }

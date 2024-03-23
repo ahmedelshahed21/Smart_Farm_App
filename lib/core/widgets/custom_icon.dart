@@ -22,9 +22,9 @@ class CustomIcon extends StatelessWidget {
       ),
       child: IconButton(
           onPressed: onPressed,
+          iconSize: iconSize ?? 40,
           icon: Icon(icon,
             color: iconColor,
-            size: iconSize ?? 40,
           )
       ),
     );

@@ -16,7 +16,7 @@ class DefaultButton extends StatelessWidget{
               borderRadius: BorderRadius.circular(15)
           ),
           side: BorderSide(
-              width: 1, color: borderColor??kPrimaryColor
+              width: 1, color: borderColor ?? kPrimaryColor
           ),
           padding: const EdgeInsets.only(top:10,bottom:10,right: 50,left: 50)
       ),
