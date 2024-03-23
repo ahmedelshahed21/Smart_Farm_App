@@ -77,9 +77,11 @@ class BodyCustomPlantFormView extends StatelessWidget{
                     }
                     return null;
                   },
+                  maxLength: 24,
                   cursorColor: kPrimaryColor.withOpacity(0.6),
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   decoration: InputDecoration(
+                    counterText: '',
                     prefixIcon:const Icon(Icons.title),
                     prefixIconColor: Colors.white,
                     hintText: 'Plant Name',
@@ -102,28 +104,35 @@ class BodyCustomPlantFormView extends StatelessWidget{
                   prefixIconColor: Colors.blue,
                   labelText: 'Watering',
                   hintText: 'How much water do this plant need ?',
+                  maxLength: 4,
                   textInputType: TextInputType.number,
                   contentPadding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*0.01,horizontal: MediaQuery.of(context).size.width*0.05)
               ),
               CustomTextFormField(
                   prefixIcon: Icons.sunny_snowing,
-                  labelText: 'Temperature',
                   prefixIconColor: Colors.orangeAccent,
+                  labelText: 'Temperature',
                   hintText: '',
+                  maxLength: 4,
                   textInputType: TextInputType.number,
                   contentPadding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*0.01,horizontal: MediaQuery.of(context).size.width*0.05)
               ),
               CustomTextFormField(
-                  prefixIcon: Icons.water,labelText: 'Humidity',
+                  prefixIcon: Icons.water,
                   prefixIconColor: kPrimaryColor,
-                  hintText: '',textInputType: TextInputType.number,
+                  labelText: 'Humidity',
+                  hintText: '',
+                  maxLength: 4,
+                  textInputType: TextInputType.number,
                   contentPadding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*0.01,horizontal: MediaQuery.of(context).size.width*0.05)
               ),
               CustomTextFormField(
                   prefixIcon: Icons.water,
                   prefixIconColor: Colors.brown,
                   labelText: 'Soil Humidity',
-                  hintText: '',textInputType: TextInputType.number,
+                  hintText: '',
+                  maxLength: 4,
+                  textInputType: TextInputType.number,
                   contentPadding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*0.01,horizontal: MediaQuery.of(context).size.width*0.05)
               ),
             ],

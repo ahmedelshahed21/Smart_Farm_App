@@ -7,6 +7,7 @@ class CustomTextFormField extends StatelessWidget {
   final String? labelText;
   final String? hintText;
   final bool? obscureText;
+  final int? maxLength;
   final TextInputType? textInputType;
   final String? Function(String?)? validator;
   final IconData? suffixIcon;
@@ -15,7 +16,7 @@ class CustomTextFormField extends StatelessWidget {
   final IconData? prefixIcon;
   final Color? prefixIconColor;
 
-  const CustomTextFormField({super.key, this.labelText, required this.hintText, this.textInputType, this.validator,  this.suffixIcon, this.suffixOnPressed, this.obscureText, this.contentPadding, this.prefixIcon, this.prefixIconColor});
+  const CustomTextFormField({super.key, this.labelText, required this.hintText, this.textInputType, this.validator,  this.suffixIcon, this.suffixOnPressed, this.obscureText, this.contentPadding, this.prefixIcon, this.prefixIconColor, this.maxLength});
 
   String? validateMessage(){
   switch(labelText){
@@ -44,14 +45,19 @@ class CustomTextFormField extends StatelessWidget {
           }
           return null;
         },
+
+        maxLength: maxLength ?? 24,
         decoration: InputDecoration(
+          counterText: '',
           prefixIcon: Icon(prefixIcon),
           prefixIconColor: prefixIconColor,
           contentPadding: contentPadding,
           filled: true,
           fillColor: kTextFiledColor,
           suffixIcon: IconButton(
-              icon: Icon(suffixIcon), onPressed: suffixOnPressed),
+              icon: Icon(suffixIcon),
+              onPressed: suffixOnPressed
+          ),
           suffixIconColor: Colors.yellow.withOpacity(0.7),
           labelText: labelText,
           labelStyle: TextStyle(
