@@ -13,8 +13,6 @@ class PlantDataCard extends StatelessWidget{
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*.03),
-      // height: MediaQuery.of(context).size.height*0.16,
-      // width: MediaQuery.of(context).size.width*width!,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: kItemColor
