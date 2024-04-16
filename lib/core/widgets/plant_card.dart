@@ -23,7 +23,6 @@ class PlantCard extends StatelessWidget{
         ),
         borderRadius: BorderRadius.circular(radius ?? 16),
       ) : BoxDecoration(
-        //color: Colors.green,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Padding(

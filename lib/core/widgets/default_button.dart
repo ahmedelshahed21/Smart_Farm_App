@@ -13,7 +13,7 @@ class DefaultButton extends StatelessWidget{
       style: ElevatedButton.styleFrom(
           backgroundColor: Colors.black,
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15)
+              borderRadius: BorderRadius.circular(40)
           ),
           side: BorderSide(
               width: 1, color: borderColor ?? kPrimaryColor

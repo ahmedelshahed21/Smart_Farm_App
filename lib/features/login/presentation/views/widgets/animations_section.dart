@@ -40,15 +40,15 @@ class _AnimationSectionState extends State<AnimationSection> with SingleTickerPr
           alignment: Alignment.bottomLeft,
           children: [
             SizedBox(
-                height: MediaQuery.of(context).size.height*0.3,
-                width: MediaQuery.of(context).size.height*0.4,
+                height: MediaQuery.of(context).size.height*0.25,
+                width: MediaQuery.of(context).size.width*0.75,
                 child: Lottie.asset(AnimationsApp.cornAnimation)
             ),
             const Text('Welcome to\n\n',
               textAlign: TextAlign.start,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 15,
+                fontSize: 12,
                 color: Colors.white,
                 letterSpacing: 3,
               ),
@@ -60,7 +60,7 @@ class _AnimationSectionState extends State<AnimationSection> with SingleTickerPr
           child: const Text('SmartFarm',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 28,
+              fontSize: 20,
               color: kPrimaryColor,
               letterSpacing: 3,
             ),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/constants.dart';
 
+
+
 class PlantDataCard extends StatelessWidget{
   const PlantDataCard({super.key, required this.name,required this.icon,required this.iconColo, required this.value, required this.unity});
-
   final String name;
   final double value;
   final String unity;

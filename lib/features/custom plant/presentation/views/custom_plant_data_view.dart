@@ -4,8 +4,8 @@ import 'package:smart_farm/core/widgets/plant_card.dart';
 import 'package:smart_farm/features/home/data/models/plant_model.dart';
 import 'package:smart_farm/features/plant/presentation/views/widgets/custom_expansion_tile.dart';
 import 'package:smart_farm/features/plant/presentation/views/widgets/plant_data_section.dart';
-import 'package:smart_farm/screens/manual_control_view.dart';
-import 'package:smart_farm/screens/percentages_view.dart';
+import 'package:smart_farm/views/manual_control_view.dart';
+import 'package:smart_farm/views/percentages_view.dart';
 
 class CustomPlantDataView extends StatelessWidget{
   static String id='CustomPlantView';

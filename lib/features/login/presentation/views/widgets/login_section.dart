@@ -15,26 +15,17 @@ class LoginSection extends StatefulWidget{
 
 class _LoginSectionState extends State<LoginSection> {
   bool obscureText=true;
-  GlobalKey<FormState> formKey=GlobalKey();
+  static final GlobalKey<FormState> formKey=GlobalKey();
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
     return Form(
       key: formKey,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.02),
+        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.02,vertical:5),
         child: Column(
           children: [
-            const Row(
-              children: [
-                Text('LOGIN',
-                  style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold
-                  ),
-                ),
-              ],
-            ),
+            SizedBox(height: MediaQuery.of(context).size.height*0.02),
             CustomTextFormField(
               contentPadding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*0.02,horizontal: MediaQuery.of(context).size.width*0.05),
               labelText: 'USER_NAME',
@@ -43,7 +34,7 @@ class _LoginSectionState extends State<LoginSection> {
               textInputType: TextInputType.emailAddress,
               hintText: 'USER_NAME',
             ),
-            const SizedBox(height: 5),
+            //const SizedBox(height: 5),
             CustomTextFormField(
               contentPadding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*0.02,horizontal: MediaQuery.of(context).size.width*0.05),
               prefixIcon: Icons.lock_outline_rounded,
@@ -60,7 +51,7 @@ class _LoginSectionState extends State<LoginSection> {
 
               hintText: 'PASSWORD',
             ),
-            SizedBox(height: MediaQuery.of(context).size.height*0.05),
+            SizedBox(height: MediaQuery.of(context).size.height*0.02),
             SizedBox(
               width: double.infinity,
               child: DefaultButton(

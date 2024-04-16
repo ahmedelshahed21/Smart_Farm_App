@@ -51,7 +51,7 @@ class CustomTextFormField extends StatelessWidget {
           counterText: '',
           prefixIcon: Icon(prefixIcon),
           prefixIconColor: prefixIconColor,
-          contentPadding: contentPadding,
+          contentPadding: contentPadding ?? EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*0.01,horizontal: MediaQuery.of(context).size.width*0.05),
           filled: true,
           fillColor: kTextFiledColor,
           suffixIcon: IconButton(
