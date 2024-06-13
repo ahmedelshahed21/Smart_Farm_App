@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/constants.dart';
+import 'package:smart_farm/core/utils/styles_app.dart';
 
 
 class CustomItem extends StatelessWidget{
@@ -21,12 +22,7 @@ class CustomItem extends StatelessWidget{
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(customPlantName,
-            style: const TextStyle(
-              fontSize: 18,
-              color: Colors.black,
-              overflow: TextOverflow.visible,
-              fontWeight: FontWeight.w500
-            ),
+            style: StylesApp.styleMedium18(context)
           ),
           const SizedBox(height:10),
           const Row(

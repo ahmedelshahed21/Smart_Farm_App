@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_farm/core/utils/styles_app.dart';
 import 'package:smart_farm/features/home/presentation/views/widgets/plants_listview.dart';
 import 'package:smart_farm/constants.dart';
 
@@ -22,11 +23,8 @@ class CustomHorizontalListView extends StatelessWidget{
                 color: kPrimaryColor,
                 width: double.infinity,
                 padding: const EdgeInsets.only(left: 24),
-                child: const Text('Plants',
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold
-                  ),
+                child: Text('Plants',
+                  style: StylesApp.styleBold24(context)
                 ),
               ),
               const SizedBox(height: 5,),

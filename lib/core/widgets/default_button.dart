@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/constants.dart';
+import 'package:smart_farm/core/utils/styles_app.dart';
 
 class DefaultButton extends StatelessWidget{
   final String buttonName;
@@ -21,12 +22,7 @@ class DefaultButton extends StatelessWidget{
           padding: const EdgeInsets.only(top:10,bottom:10,right: 50,left: 50)
       ),
       child: Text(buttonName,
-        style: const TextStyle(
-          color: Colors.yellow,
-          fontWeight: FontWeight.w900,
-          fontSize: 20,
-          letterSpacing: 3.5,
-        ) ,
+        style:StylesApp.styleMostThick20(context)
       ),
     );
   }

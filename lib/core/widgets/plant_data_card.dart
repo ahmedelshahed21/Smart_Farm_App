@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/constants.dart';
+import 'package:smart_farm/core/utils/styles_app.dart';
 
 
 
@@ -30,12 +31,7 @@ class PlantDataCard extends StatelessWidget{
               ),
               const SizedBox(width: 5),
               Text(name,
-                style: const TextStyle(
-                    fontSize: 16,
-                    letterSpacing: 2,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                ),
+                style: StylesApp.styleMedium16(context)
               ),
             ],
           ),
@@ -46,21 +42,13 @@ class PlantDataCard extends StatelessWidget{
             textBaseline: TextBaseline.alphabetic,
             children: [
               Text('${value.round()}',
-                style: const TextStyle(
-                    fontSize: 40,
-                    letterSpacing: 2,
-                    color: kPrimaryColor,
-                    fontWeight: FontWeight.bold
-                ),
+                style: StylesApp.styleBold40(context)
               ),
               const SizedBox(width: 5,),
               Text(unity,
-                style: const TextStyle(
-                    fontSize: 16,
-                    letterSpacing: 2,
-                    color: Colors.white70,
-                    fontWeight: FontWeight.w500
-                ),
+                style: StylesApp.styleMedium16(context).copyWith(
+                  color: Colors.white70
+                )
               ),
             ],
           ),

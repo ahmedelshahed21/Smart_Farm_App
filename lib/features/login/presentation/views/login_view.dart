@@ -16,7 +16,7 @@ class _LoginViewState extends State<LoginView> {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*.05),
-        child: ListView(
+        child: Column(
           children: [
             const AnimationSection(),
             SizedBox(height: MediaQuery.of(context).size.height*0.03),

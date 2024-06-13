@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/core/utils/assets_app.dart';
+import 'package:smart_farm/core/utils/styles_app.dart';
 import 'package:smart_farm/features/custom%20plant/presentation/views/custom_plant_data_view.dart';
 import 'package:smart_farm/features/custom%20plant/presentation/views/widgets/custom_item.dart';
 import 'package:smart_farm/features/custom%20plant/presentation/views/custom_plant_form_view.dart';
@@ -25,10 +26,9 @@ class _AddingCustomPlantViewState extends State<AddingCustomPlantView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Custom Plant',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-        ),),
+        title: Text('Custom Plant',
+          style: StylesApp.styleBold24(context)
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green.shade900,

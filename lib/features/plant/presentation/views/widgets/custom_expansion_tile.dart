@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/constants.dart';
+import 'package:smart_farm/core/utils/styles_app.dart';
 
 class CustomExpansionTile extends StatelessWidget {
   const CustomExpansionTile({super.key, required this.title, this.content});
@@ -26,9 +27,9 @@ class CustomExpansionTile extends StatelessWidget {
         backgroundColor: kItemColor,
         tilePadding: const EdgeInsets.only(left: 0.0),
         title: Text('\t $title',
-          style: const TextStyle(
-              fontWeight: FontWeight.bold,
-          ),
+          style: StylesApp.styleBold16(context).copyWith(
+            color: Colors.white
+          )
         ),
         children: [
           Container(
@@ -42,10 +43,7 @@ class CustomExpansionTile extends StatelessWidget {
                 color: kItemColor
             ),
             child: Text(content!,
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.white.withOpacity(0.6),
-              ),
+              style: StylesApp.styleRegular14(context)
             ),
           ),
           const SizedBox(height: 5,)

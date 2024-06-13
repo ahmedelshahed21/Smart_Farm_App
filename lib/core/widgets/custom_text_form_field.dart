@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/constants.dart';
 import 'package:smart_farm/core/utils/functions/outline_input_border.dart';
+import 'package:smart_farm/core/utils/styles_app.dart';
 
 
 class CustomTextFormField extends StatelessWidget {
@@ -60,15 +61,9 @@ class CustomTextFormField extends StatelessWidget {
           ),
           suffixIconColor: Colors.yellow.withOpacity(0.7),
           labelText: labelText,
-          labelStyle: TextStyle(
-              color: Colors.yellow.withOpacity(0.7),
-              fontWeight: FontWeight.bold
-          ),
+          labelStyle: StylesApp.styleBold16(context),
           hintText: hintText,
-          hintStyle: const TextStyle(
-              fontSize: 12,
-              color: Colors.white70
-          ),
+          hintStyle: StylesApp.styleRegular12(context),
           enabledBorder: buildOutlineInputBorder(color: Colors.black),
           focusedBorder: buildOutlineInputBorder(color: Colors.black),
           errorBorder: buildOutlineInputBorder(color: Colors.red),

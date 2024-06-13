@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:smart_farm/core/utils/styles_app.dart';
 
 class CircularPercent extends StatelessWidget {
 
@@ -18,7 +19,6 @@ class CircularPercent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return CircularPercentIndicator(
       animation: true,
       animationDuration: 4000,
@@ -30,28 +30,23 @@ class CircularPercent extends StatelessWidget {
       progressColor: progressColor,
       circularStrokeCap: CircularStrokeCap.round,
       header: Text(name,
-        style: TextStyle(
-            fontSize: nameFontSize ?? 24,
-            color: Colors.white
-        ),
+        style: StylesApp.styleSemiBold20(context).copyWith(
+          fontSize: nameFontSize,
+        )
       ),
       center:
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('${(percentage*100).toInt()} ',
-            style: TextStyle(
-                fontSize: percentageFontSize ?? 28,
-                fontWeight: FontWeight.bold,
-                color: Colors.green
-            ),
+          Text('${(percentage*100).round()} ',
+            style: StylesApp.styleBold30(context).copyWith(
+              fontSize: percentageFontSize
+            )
           ),
           Text(measruingUnit ?? '%',
-            style: TextStyle(
-                fontSize: measruingUnitFontSize ?? 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.white
-            ),
+            style: StylesApp.styleBold24(context).copyWith(
+              fontSize: measruingUnitFontSize
+            )
           ),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_farm/core/utils/styles_app.dart';
 import 'package:smart_farm/features/home/data/models/plant_model.dart';
 
 class PlantCard extends StatelessWidget{
@@ -28,11 +29,11 @@ class PlantCard extends StatelessWidget{
       child: Padding(
         padding: category.image != null ? padding ?? const EdgeInsets.all(12.0) : const EdgeInsets.symmetric(vertical: 12),
         child: Text(category.plantName,
-                style: TextStyle(
-                    color: category.image != null ? Colors.black : Colors.white,
-                    fontSize: category.image != null ? fontSize ?? 20 : 14,
-                    fontWeight: fontWeight ?? FontWeight.bold
-                ),
+                style: StylesApp.styleBold14(context).copyWith(
+                  fontSize: fontSize ?? 20,
+                  fontWeight: fontWeight,
+                  color: category.image != null ? null : Colors.white,
+                )
               ),
       ),
     );

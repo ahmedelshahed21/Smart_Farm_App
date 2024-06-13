@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smart_farm/constants.dart';
 import 'package:smart_farm/core/utils/assets_app.dart';
+import 'package:smart_farm/core/utils/styles_app.dart';
 import 'package:smart_farm/features/custom%20plant/presentation/views/custom_plants_view.dart';
 
 class CustomPlantContainer extends StatelessWidget{
@@ -25,12 +26,8 @@ class CustomPlantContainer extends StatelessWidget{
         child: Row(
           children: [
             Lottie.asset(AnimationsApp.customPlantAnimation),
-            const Text('Custom Plant',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-              ),
+            Text('Custom Plant',
+              style: StylesApp.styleBold20(context)
             ),
           ],
         ),

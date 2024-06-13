@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_farm/core/utils/styles_app.dart';
 
 class CustomTextButton extends StatelessWidget{
   const CustomTextButton({super.key, required this.child, this.onPressed, this.borderRadius, this.backgroundColor, this.textColor, this.fontSize});
@@ -24,11 +25,9 @@ class CustomTextButton extends StatelessWidget{
       ),
       onPressed: onPressed,
       child: Text(child,
-        style: TextStyle(
-          color: textColor ?? Colors.black ,
-          fontWeight: FontWeight.w600,
-          fontSize: 18
-        ),
+        style: StylesApp.styleSemiBold18(context).copyWith(
+          color: textColor
+        )
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smart_farm/constants.dart';
 import 'package:smart_farm/core/utils/assets_app.dart';
+import 'package:smart_farm/core/utils/styles_app.dart';
 
 class AnimationSection extends StatefulWidget {
   const AnimationSection({super.key});
@@ -33,40 +34,37 @@ class _AnimationSectionState extends State<AnimationSection> with SingleTickerPr
   }
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Stack(
-          alignment: Alignment.bottomLeft,
-          children: [
-            SizedBox(
-                height: MediaQuery.of(context).size.height*0.25,
-                width: MediaQuery.of(context).size.width*0.75,
-                child: Lottie.asset(AnimationsApp.cornAnimation)
-            ),
-            const Text('Welcome to\n\n',
-              textAlign: TextAlign.start,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 12,
-                color: Colors.white,
-                letterSpacing: 3,
+    return Padding(
+      padding: const EdgeInsets.only(top: 24.0),
+      child: Column(
+        children: [
+          Stack(
+            alignment: Alignment.bottomLeft,
+            children: [
+              SizedBox(
+                  height: MediaQuery.of(context).size.height*0.25,
+                  width: MediaQuery.of(context).size.width*0.75,
+                  child: Lottie.asset(AnimationsApp.cornAnimation)
+              ),
+              Text('Welcome to\n\n',
+                textAlign: TextAlign.start,
+                style: StylesApp.styleBold12(context).copyWith(
+                  letterSpacing: 3
+                )
+              ),
+            ],
+          ),
+          FadeTransition(
+            opacity: fadingAnimation!,
+            child: Text('SmartFarm',
+              style: StylesApp.styleBold20(context).copyWith(
+                color: kPrimaryColor,
+                letterSpacing: 3
               ),
             ),
-          ],
-        ),
-        FadeTransition(
-          opacity: fadingAnimation!,
-          child: const Text('SmartFarm',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-              color: kPrimaryColor,
-              letterSpacing: 3,
-            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

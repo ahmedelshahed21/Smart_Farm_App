@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_farm/constants.dart';
 import 'package:smart_farm/core/utils/functions/custom_snack_bar.dart';
 import 'package:smart_farm/core/utils/functions/underline_input_border.dart';
+import 'package:smart_farm/core/utils/styles_app.dart';
 import 'package:smart_farm/core/widgets/custom_icon.dart';
 import 'package:smart_farm/core/widgets/custom_text_form_field.dart';
 import 'package:smart_farm/features/custom%20plant/presentation/views/widgets/plant_image.dart';
@@ -79,10 +80,8 @@ class CustomPlantFormView extends StatelessWidget{
                       prefixIcon:const Icon(Icons.title),
                       prefixIconColor: Colors.white,
                       hintText: 'Plant Name',
-                      hintStyle: TextStyle(
-                          fontWeight: FontWeight.normal,
-                          fontSize: 16,
-                          color: Colors.yellow.withOpacity(0.7)
+                      hintStyle: StylesApp.styleBold16(context).copyWith(
+                        fontWeight: FontWeight.w500
                       ),
                       enabledBorder: buildUnderlineInputBorder(color: kPrimaryColor.withOpacity(0.6)),
                       focusedBorder: buildUnderlineInputBorder(color: kPrimaryColor.withOpacity(0.6)),
