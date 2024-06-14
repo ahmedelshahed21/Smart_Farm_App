@@ -5,10 +5,10 @@ import 'package:smart_farm/core/utils/styles_app.dart';
 class ImageSourceCard extends StatelessWidget {
   const ImageSourceCard(
       {super.key,
-      required this.icon,
-      required this.iconColor,
-      required this.onPressed,
-      required this.name});
+        required this.icon,
+        required this.iconColor,
+        required this.onPressed,
+        required this.name});
 
   final void Function() onPressed;
   final IconData icon;

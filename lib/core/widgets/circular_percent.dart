@@ -23,9 +23,9 @@ class CircularPercent extends StatelessWidget {
       animation: true,
       animationDuration: 4000,
       startAngle: 0,
-      radius: radius ?? 50,
+      radius: radius ?? 45,
       percent: percentage,
-      lineWidth: lineWidth ?? 7,
+      lineWidth: lineWidth ?? 6,
       backgroundColor: Colors.transparent,
       progressColor: progressColor,
       circularStrokeCap: CircularStrokeCap.round,
@@ -40,7 +40,8 @@ class CircularPercent extends StatelessWidget {
         children: [
           Text('${(percentage*100).round()} ',
             style: StylesApp.styleBold30(context).copyWith(
-              fontSize: percentageFontSize
+              fontSize: percentageFontSize,
+              letterSpacing: 0
             )
           ),
           Text(measruingUnit ?? '%',

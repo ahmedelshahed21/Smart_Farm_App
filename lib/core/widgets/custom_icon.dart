@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_farm/constants.dart';
 
 
 class CustomIcon extends StatelessWidget {
@@ -17,7 +18,7 @@ class CustomIcon extends StatelessWidget {
       height: containerHeight ?? 60,
       width: containerWidth ?? 60,
       decoration: BoxDecoration(
-          color: backgroundColor,
+          color: backgroundColor??kItemColor,
           borderRadius: BorderRadius.circular(radius)
       ),
       child: IconButton(

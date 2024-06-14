@@ -30,39 +30,43 @@ class _PlantImageState extends State<PlantImage> {
             iconSize: 45,
             color: Colors.white38,
             onPressed: (){
-              showModalBottomSheet(
-                  backgroundColor: Colors.black12,
-                  context: context,
-                  builder: (context){
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        ImageSourceCard(
-                            icon: Icons.camera_alt,
-                            iconColor: Colors.white70,
-                            onPressed: (){
-                              pickImage(imageSource: TheImageSource.camera);
-                            },
-                            name: 'Camera'
-                        ),
-                        ImageSourceCard(
-                            icon: Icons.image_rounded,
-                            iconColor: Colors.blue.shade600,
-                            onPressed: (){
-                              pickImage(imageSource: TheImageSource.gallery);
-                            },
-                            name: 'Gallery'
-                        ),
-                      ],
-                    );
-                  }
-              );
+              buildImageBottomSheet(context);
               //pickImage();
             },
           ),
         )
       ],
     );
+  }
+
+  Future<dynamic> buildImageBottomSheet(BuildContext context) {
+    return showModalBottomSheet(
+                backgroundColor: const Color(0xFF1e1e1e),
+                context: context,
+                builder: (context){
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ImageSourceCard(
+                          icon: Icons.camera_alt,
+                          iconColor: Colors.white70,
+                          onPressed: (){
+                            pickImage(imageSource: TheImageSource.camera);
+                          },
+                          name: 'Camera'
+                      ),
+                      ImageSourceCard(
+                          icon: Icons.image_rounded,
+                          iconColor: Colors.blue.shade600,
+                          onPressed: (){
+                            pickImage(imageSource: TheImageSource.gallery);
+                          },
+                          name: 'Gallery'
+                      ),
+                    ],
+                  );
+                }
+            );
   }
 
 
@@ -83,8 +87,3 @@ class _PlantImageState extends State<PlantImage> {
     }
   }
 }
-
-
-
-
-

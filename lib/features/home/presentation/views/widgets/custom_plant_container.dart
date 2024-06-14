@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smart_farm/constants.dart';
 import 'package:smart_farm/core/utils/assets_app.dart';
@@ -16,9 +18,8 @@ class CustomPlantContainer extends StatelessWidget{
         Navigator.pushNamed(context, AddingCustomPlantView.id);
       },
       child: Container(
-        width: 250,
+        width: 270,
         height: 100,
-        margin: const EdgeInsets.only(bottom: 100),
         decoration: BoxDecoration(
             color: kPrimaryColor,
             borderRadius: BorderRadius.circular(16)

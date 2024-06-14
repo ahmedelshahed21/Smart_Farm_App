@@ -21,6 +21,7 @@ class HomeView extends StatelessWidget{
       ),
       body:
       const Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           CustomHorizontalListView(),
           CustomPlantContainer(),

@@ -27,7 +27,6 @@ class _SplashViewState extends State<SplashView> {
         splashIconSize: 250,
         duration: 5000,
         animationDuration: const Duration(seconds: 3),
-        //splashTransition: SplashTransition.rotationTransition,
       ),
 
     );

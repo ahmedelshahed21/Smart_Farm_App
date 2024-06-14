@@ -45,10 +45,10 @@ class PlantView extends StatelessWidget{
               ),
               const Expanded(child: SizedBox()),
               PlantAction(
-                onPressedManualButton: (){
+                onPressedCustomizeButton: (){
                   Navigator.pushNamed(context, ManualControlView.id);
                 },
-                onPressedAutomaticButton: (){
+                onPressedSensorReadings: (){
                   Navigator.pushNamed(context, PercentagesView.id);
 
                 },

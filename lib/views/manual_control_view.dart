@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/core/widgets/circular_percent.dart';
 import 'package:smart_farm/core/widgets/custom_text_button.dart';
-import 'package:smart_farm/core/widgets/default_button.dart';
 
 class ManualControlView extends StatefulWidget{
 

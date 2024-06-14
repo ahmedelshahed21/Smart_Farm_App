@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/core/widgets/circular_percent.dart';
+import 'package:smart_farm/core/widgets/custom_text_button.dart';
+import 'package:smart_farm/core/widgets/manual_control_card.dart';
+
 
 class PercentagesView extends StatelessWidget{
   const PercentagesView({super.key});
@@ -7,37 +10,84 @@ class PercentagesView extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          CustomTextButton(
+            child: 'Manual Control',
+            onPressed: (){
+              buildManualControlBottomSheet(context);
+            },
+            borderRadius: BorderRadius.circular(12),
+          ),
+          const SizedBox(width: 10),
+        ],
+      ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Row(
+          const SizedBox(height: 80,),
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const CircularPercent(
-                  name:'Water',
-                  percentage: 0.6,
-                  progressColor: Colors.blue
+              CircularPercent(
+                  name:'Humidity',percentage: 0.65,
+                  progressColor: Colors.cyan
               ),
               CircularPercent(
-                  name:'Temperature',
-                  percentage: 0.27,
-                  progressColor: Colors.yellow.shade500,
-                  measruingUnit: 'C'
+                  name:'Soil Humidity',percentage: 0.7,
+                  progressColor: Colors.brown
               ),
+
             ],
           ),
-          const CircularPercent(
-              name:'Humidity',percentage: 0.65,
-              progressColor: Colors.cyan
-          ),
-          const CircularPercent(
-              name:'Soil Humidity',percentage: 0.7,
-              progressColor: Colors.brown
+          const SizedBox(height: 50,),
+          CircularPercent(
+              name:'Temperature',
+              percentage: 0.27,
+              progressColor: Colors.yellow.shade500,
+              measruingUnit: 'C'
           ),
         ],
       ),
 
     );
   }
+
+  Future<dynamic> buildManualControlBottomSheet(BuildContext context) {
+    return showModalBottomSheet(
+                backgroundColor: const Color(0xFF1e1e1e),
+                context: context,
+                builder: (context){
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      const SizedBox(height: 40,),
+                      ManualControlCard(
+                        icon: Icons.water_drop_outlined,
+                        iconColor: Colors.blue,
+                        title: 'water',
+                        status: 'OPEN',
+                        onPressed: (){
+
+                        },
+                      ),
+
+                      const SizedBox(height: 20,),
+                      ManualControlCard(
+                        icon: Icons.roofing,
+                        iconColor: Colors.brown,
+                        title: 'Roof',
+                        status: 'CLOSED',
+                        onPressed: (){
+
+                        },
+                      ),
+                      const SizedBox(height: 40,)
+                    ],
+                  );
+                }
+            );
+  }
 }
+

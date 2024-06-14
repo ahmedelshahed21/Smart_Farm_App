@@ -29,10 +29,10 @@ class CustomPlantDataView extends StatelessWidget{
             PlantDataSection(water: category.water,temp: category.temp,humidity: category.humidity,soilHumidity: category.soilHumidity,),
             const Expanded(child: SizedBox()),
             PlantAction(
-              onPressedManualButton: (){
+              onPressedCustomizeButton: (){
                 Navigator.pushNamed(context, ManualControlView.id);
               },
-              onPressedAutomaticButton: (){
+              onPressedSensorReadings: (){
                 Navigator.pushNamed(context, PercentagesView.id);
               },
             ),

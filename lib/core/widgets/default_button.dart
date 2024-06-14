@@ -21,8 +21,11 @@ class DefaultButton extends StatelessWidget{
           ),
           padding: const EdgeInsets.only(top:10,bottom:10,right: 50,left: 50)
       ),
-      child: Text(buttonName,
-        style:StylesApp.styleMostThick20(context)
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Text(buttonName,
+          style:StylesApp.styleMostThick20(context)
+        ),
       ),
     );
   }
