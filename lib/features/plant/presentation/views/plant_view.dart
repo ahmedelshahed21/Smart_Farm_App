@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/core/widgets/plant_action.dart';
 import 'package:smart_farm/core/widgets/plant_card.dart';
+import 'package:smart_farm/features/custom%20plant/presentation/views/custom_plants_view.dart';
 import 'package:smart_farm/features/home/data/models/plant_model.dart';
 import 'package:smart_farm/features/plant/presentation/views/widgets/custom_expansion_tile.dart';
 import 'package:smart_farm/features/plant/presentation/views/widgets/plant_data_section.dart';
-import 'package:smart_farm/views/manual_control_view.dart';
 import 'package:smart_farm/views/percentages_view.dart';
 
 class PlantView extends StatelessWidget{
@@ -46,7 +46,7 @@ class PlantView extends StatelessWidget{
               const Expanded(child: SizedBox()),
               PlantAction(
                 onPressedCustomizeButton: (){
-                  Navigator.pushNamed(context, ManualControlView.id);
+                  Navigator.pushNamed(context, CustomPlantsView.id);
                 },
                 onPressedSensorReadings: (){
                   Navigator.pushNamed(context, PercentagesView.id);

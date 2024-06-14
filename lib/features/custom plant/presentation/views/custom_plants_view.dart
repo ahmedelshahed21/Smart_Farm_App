@@ -7,14 +7,14 @@ import 'package:smart_farm/features/custom%20plant/presentation/views/custom_pla
 import 'package:smart_farm/features/home/data/models/plant_model.dart';
 
 
-class AddingCustomPlantView extends StatefulWidget{
-  const AddingCustomPlantView({super.key});
-  static String id='CustomPlantView';
+class CustomPlantsView extends StatefulWidget{
+  const CustomPlantsView({super.key});
+  static String id='CustomPlantsView';
   @override
-  State<AddingCustomPlantView> createState() => _AddingCustomPlantViewState();
+  State<CustomPlantsView> createState() => _CustomPlantsViewState();
 }
 
-class _AddingCustomPlantViewState extends State<AddingCustomPlantView> {
+class _CustomPlantsViewState extends State<CustomPlantsView> {
 
 
   final List<PlantModel> customPlants=[
@@ -27,7 +27,9 @@ class _AddingCustomPlantViewState extends State<AddingCustomPlantView> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Custom Plant',
-          style: StylesApp.styleBold24(context)
+          style: StylesApp.styleBold20(context).copyWith(
+            color: Colors.white
+          )
         ),
       ),
       floatingActionButton: FloatingActionButton(

@@ -4,11 +4,10 @@ import 'package:smart_farm/core/widgets/plant_card.dart';
 import 'package:smart_farm/features/home/data/models/plant_model.dart';
 import 'package:smart_farm/features/plant/presentation/views/widgets/custom_expansion_tile.dart';
 import 'package:smart_farm/features/plant/presentation/views/widgets/plant_data_section.dart';
-import 'package:smart_farm/views/manual_control_view.dart';
 import 'package:smart_farm/views/percentages_view.dart';
 
 class CustomPlantDataView extends StatelessWidget{
-  static String id='CustomPlantView';
+  static String id='CustomPlantDataView';
   const CustomPlantDataView({super.key, required this.category});
   final PlantModel category;
 
@@ -30,7 +29,7 @@ class CustomPlantDataView extends StatelessWidget{
             const Expanded(child: SizedBox()),
             PlantAction(
               onPressedCustomizeButton: (){
-                Navigator.pushNamed(context, ManualControlView.id);
+                Navigator.pop(context);
               },
               onPressedSensorReadings: (){
                 Navigator.pushNamed(context, PercentagesView.id);

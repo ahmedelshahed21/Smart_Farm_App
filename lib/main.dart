@@ -33,7 +33,7 @@ class SmartFarmApp extends StatelessWidget {
                 backButtonIconBuilder: (context) => const BackIconButton())),
         routes: {
           HomeView.id: (context) => const HomeView(),
-          AddingCustomPlantView.id: (context) => const AddingCustomPlantView(),
+          CustomPlantsView.id: (context) => const CustomPlantsView(),
           CustomPlantFormView.id: (context) => const CustomPlantFormView(),
           PercentagesView.id: (context) => const PercentagesView(),
           ManualControlView.id: (context) => const ManualControlView(),

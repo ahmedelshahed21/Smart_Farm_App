@@ -5,6 +5,7 @@ import 'package:smart_farm/core/utils/functions/underline_input_border.dart';
 import 'package:smart_farm/core/utils/styles_app.dart';
 import 'package:smart_farm/core/widgets/custom_icon.dart';
 import 'package:smart_farm/core/widgets/custom_text_form_field.dart';
+import 'package:smart_farm/features/custom%20plant/presentation/views/custom_plants_view.dart';
 import 'package:smart_farm/features/custom%20plant/presentation/views/widgets/plant_image.dart';
 
 class CustomPlantFormView extends StatelessWidget{
@@ -52,7 +53,7 @@ class CustomPlantFormView extends StatelessWidget{
                         radius: 16,
                         onPressed: (){
                           if(formKey.currentState!.validate()){
-                            Navigator.pop(context);
+                            Navigator.pushNamed(context, CustomPlantsView.id);
                           }
                           else{
                             customSnackBar(context,' Invalid Values');

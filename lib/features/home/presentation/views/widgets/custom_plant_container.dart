@@ -15,7 +15,7 @@ class CustomPlantContainer extends StatelessWidget{
 
     return GestureDetector(
       onTap: (){
-        Navigator.pushNamed(context, AddingCustomPlantView.id);
+        Navigator.pushNamed(context, CustomPlantsView.id);
       },
       child: Container(
         width: 270,
