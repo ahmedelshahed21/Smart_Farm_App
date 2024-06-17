@@ -41,7 +41,7 @@ class _PlantImageState extends State<PlantImage> {
 
   Future<dynamic> buildImageBottomSheet(BuildContext context) {
     return showModalBottomSheet(
-                backgroundColor: const Color(0xFF1e1e1e),
+                backgroundColor: kBottomSheetColor,
                 context: context,
                 builder: (context){
                   return Row(
