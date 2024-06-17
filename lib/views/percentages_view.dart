@@ -62,23 +62,23 @@ class PercentagesView extends StatelessWidget{
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const SizedBox(height: 40,),
+                      const SizedBox(height: 40),
                       ManualControlCard(
                         icon: Icons.water_drop_outlined,
                         iconColor: Colors.blue,
-                        title: 'water',
-                        status: 'OPEN',
+                        title: 'Water',
+                        status: 'Open',
                         onPressed: (){
 
                         },
                       ),
 
-                      const SizedBox(height: 20,),
+                      const SizedBox(height: 20),
                       ManualControlCard(
                         icon: Icons.roofing,
                         iconColor: Colors.brown,
                         title: 'Roof',
-                        status: 'CLOSED',
+                        status: 'Close',
                         onPressed: (){
 
                         },
