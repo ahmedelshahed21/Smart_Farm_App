@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_farm/constants.dart';
 import 'package:smart_farm/core/widgets/circular_percent.dart';
 import 'package:smart_farm/core/widgets/custom_text_button.dart';
 import 'package:smart_farm/core/widgets/manual_control_card.dart';
@@ -55,7 +56,7 @@ class PercentagesView extends StatelessWidget{
 
   Future<dynamic> buildManualControlBottomSheet(BuildContext context) {
     return showModalBottomSheet(
-                backgroundColor: const Color(0xFF1e1e1e),
+                backgroundColor: kBottomSheetColor,
                 context: context,
                 builder: (context){
                   return Column(

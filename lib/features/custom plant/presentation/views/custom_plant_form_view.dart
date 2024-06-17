@@ -66,7 +66,7 @@ class CustomPlantFormView extends StatelessWidget{
                     ),
                     const PlantImage(),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: TextFormField(
                         validator: (data){
                           if(data!.isEmpty){
