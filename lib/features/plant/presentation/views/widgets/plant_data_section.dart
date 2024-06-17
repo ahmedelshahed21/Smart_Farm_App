@@ -12,10 +12,10 @@ class PlantDataSection extends StatelessWidget {
     this.soilHumidity,
   });
 
-  final double? water;
-  final double? temp;
-  final double? humidity;
-  final double? soilHumidity;
+  final String? water;
+  final String? temp;
+  final String? humidity;
+  final String? soilHumidity;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class PlantDataSection extends StatelessWidget {
                   name: 'Watering',
                   icon: Icons.water_drop_outlined,
                   iconColo: Colors.blue,
-                  value: water ?? 0,
+                  value: water ?? '0',
                   unity: 'L'),
             ),
             const SizedBox(width: 5.0),
@@ -46,7 +46,7 @@ class PlantDataSection extends StatelessWidget {
                   name: 'Temperature',
                   icon: Icons.sunny_snowing,
                   iconColo: Colors.orange,
-                  value: temp ?? 17.5,
+                  value: temp ?? '17.5',
                   unity: 'C'),
             ),
           ],
@@ -61,7 +61,7 @@ class PlantDataSection extends StatelessWidget {
                   name: 'Humidity',
                   icon: Icons.water,
                   iconColo: kPrimaryColor,
-                  value: humidity ?? 69.1,
+                  value: humidity ?? '69.1',
                   unity: '%'),
             ),
             const SizedBox(width: 5.0),
@@ -71,7 +71,7 @@ class PlantDataSection extends StatelessWidget {
                   name: 'Soil Humidity',
                   icon: Icons.water,
                   iconColo: Colors.brown,
-                  value: soilHumidity ?? 22,
+                  value: soilHumidity ?? '22',
                   unity: '%'),
             ),
           ],

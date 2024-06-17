@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:smart_farm/core/widgets/plant_action.dart';
+import 'package:smart_farm/core/widgets/custom_text_button.dart';
 import 'package:smart_farm/core/widgets/plant_card.dart';
 import 'package:smart_farm/features/home/data/models/plant_model.dart';
 import 'package:smart_farm/features/plant/presentation/views/widgets/custom_expansion_tile.dart';
 import 'package:smart_farm/features/plant/presentation/views/widgets/plant_data_section.dart';
-import 'package:smart_farm/views/percentages_view.dart';
+import 'package:smart_farm/features/plant/presentation/views/percentages_view.dart';
 
 class CustomPlantDataView extends StatelessWidget{
   static String id='CustomPlantDataView';
@@ -27,13 +27,19 @@ class CustomPlantDataView extends StatelessWidget{
             const Expanded(child: SizedBox()),
             PlantDataSection(water: category.water,temp: category.temp,humidity: category.humidity,soilHumidity: category.soilHumidity,),
             const Expanded(child: SizedBox()),
-            PlantAction(
-              onPressedCustomizeButton: (){
-                Navigator.pop(context);
-              },
-              onPressedSensorReadings: (){
-                Navigator.pushNamed(context, PercentagesView.id);
-              },
+            SizedBox(
+              height: 60,
+              child: CustomTextButton(
+                onPressed: (){
+                  Navigator.pushNamed(context, PercentagesView.id);
+                },
+                child: 'Sensor Readings',
+                backgroundColor: Colors.deepOrangeAccent,
+                textColor: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+                letterSpacing: 3,
+                fontSize: 20,
+              ),
             ),
             const Expanded(child: SizedBox()),
           ],

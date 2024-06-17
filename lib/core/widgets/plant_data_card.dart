@@ -7,14 +7,14 @@ import 'package:smart_farm/core/utils/styles_app.dart';
 class PlantDataCard extends StatelessWidget{
   const PlantDataCard({super.key, required this.name,required this.icon,required this.iconColo, required this.value, required this.unity});
   final String name;
-  final double value;
+  final String value;
   final String unity;
   final IconData icon;
   final Color iconColo;
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*.03),
+      padding: const EdgeInsets.symmetric(vertical: 24.0,horizontal: 8.0),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: kItemColor
@@ -30,8 +30,12 @@ class PlantDataCard extends StatelessWidget{
                 color: iconColo,
               ),
               const SizedBox(width: 5),
-              Text(name,
-                style: StylesApp.styleMedium16(context)
+              Flexible(
+                child: FittedBox(
+                  child: Text(name,
+                    style: StylesApp.styleMedium16(context)
+                  ),
+                ),
               ),
             ],
           ),
@@ -41,8 +45,12 @@ class PlantDataCard extends StatelessWidget{
             crossAxisAlignment: CrossAxisAlignment.baseline,
             textBaseline: TextBaseline.alphabetic,
             children: [
-              Text('${value.round()}',
-                style: StylesApp.styleBold40(context)
+              Flexible(
+                child: FittedBox(
+                  child: Text(value,
+                    style: StylesApp.styleBold36(context)
+                  ),
+                ),
               ),
               const SizedBox(width: 5,),
               Text(unity,

@@ -5,7 +5,7 @@ import 'package:smart_farm/features/custom%20plant/presentation/views/custom_pla
 import 'package:smart_farm/features/home/data/models/plant_model.dart';
 import 'package:smart_farm/features/plant/presentation/views/widgets/custom_expansion_tile.dart';
 import 'package:smart_farm/features/plant/presentation/views/widgets/plant_data_section.dart';
-import 'package:smart_farm/views/percentages_view.dart';
+import 'package:smart_farm/features/plant/presentation/views/percentages_view.dart';
 
 class PlantView extends StatelessWidget{
   static String id='PlantView';
