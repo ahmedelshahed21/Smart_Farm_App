@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:smart_farm/features/login/presentation/views/widgets/animations_section.dart';
 import 'package:smart_farm/features/login/presentation/views/widgets/login_section.dart';
 
@@ -16,14 +14,16 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*.05),
-        child: Column(
-          children: [
-            const AnimationSection(),
-            SizedBox(height: MediaQuery.of(context).size.height*0.03),
-            const LoginSection(),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*.05),
+          child: Column(
+            children: [
+              const AnimationSection(),
+              SizedBox(height: MediaQuery.of(context).size.height*0.03),
+              const LoginSection(),
+            ],
+          ),
         ),
       ),
     );
