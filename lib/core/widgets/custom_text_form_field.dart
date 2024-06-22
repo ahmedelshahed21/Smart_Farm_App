@@ -16,9 +16,10 @@ class CustomTextFormField extends StatelessWidget {
   final void Function()? suffixOnPressed;
   final EdgeInsetsGeometry? contentPadding;
   final IconData? prefixIcon;
+  final TextEditingController controller;
   final Color? prefixIconColor;
 
-  const CustomTextFormField({super.key, this.labelText, required this.hintText, this.textInputType, this.validator,  this.suffixIcon, this.suffixOnPressed, this.obscureText, this.contentPadding, this.prefixIcon, this.prefixIconColor, this.maxLength, this.maxLines});
+  const CustomTextFormField({super.key, this.labelText, required this.hintText, this.textInputType, this.validator,  this.suffixIcon, this.suffixOnPressed, this.obscureText, this.contentPadding, this.prefixIcon, this.prefixIconColor, this.maxLength, this.maxLines, required this.controller});
 
   String? validateMessage(){
   switch(labelText){
@@ -56,7 +57,7 @@ class CustomTextFormField extends StatelessWidget {
           prefixIconColor: prefixIconColor,
           contentPadding: contentPadding ?? EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*0.01,horizontal: MediaQuery.of(context).size.width*0.05),
           filled: true,
-          fillColor: kTextFiledColor,
+          fillColor: kSecondaryColor,
           suffixIcon: IconButton(
               icon: Icon(suffixIcon),
               onPressed: suffixOnPressed
@@ -71,6 +72,7 @@ class CustomTextFormField extends StatelessWidget {
           errorBorder: buildOutlineInputBorder(color: Colors.red),
           focusedErrorBorder: buildOutlineInputBorder(color: Colors.red),
         ),
+        controller: controller,
       ),
     );
   }

@@ -33,7 +33,10 @@ class PlantDataCard extends StatelessWidget{
               Flexible(
                 child: FittedBox(
                   child: Text(name,
-                    style: StylesApp.styleMedium16(context)
+                    style: StylesApp.styleSemiBold18(context).copyWith(
+                      color: Colors.white,
+                      letterSpacing: 2
+                    )
                   ),
                 ),
               ),
@@ -48,7 +51,7 @@ class PlantDataCard extends StatelessWidget{
               Flexible(
                 child: FittedBox(
                   child: Text(value,
-                    style: StylesApp.styleBold36(context)
+                    style: StylesApp.styleBold32(context)
                   ),
                 ),
               ),

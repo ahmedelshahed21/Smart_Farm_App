@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_farm/constants.dart';
+import 'package:smart_farm/core/utils/styles_app.dart';
 
 void customSnackBar(BuildContext context,String message){
   ScaffoldMessenger.of(context).showSnackBar(
@@ -19,11 +20,13 @@ void customSnackBar(BuildContext context,String message){
                   color: Colors.yellow,
                   size: 32,
                 ),
-                Text(message,
-                  style: const TextStyle(
-                    color: Colors.yellow,
-                    fontSize: 18,
-                    //fontWeight: FontWeight.bold
+                Flexible(
+                  child: FittedBox(
+                    child: Text(message,
+                      style: StylesApp.styleMedium20(context).copyWith(
+                        color: Colors.yellow
+                      )
+                    ),
                   ),
                 ),
               ],

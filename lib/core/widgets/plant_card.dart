@@ -28,7 +28,7 @@ class PlantCard extends StatelessWidget{
       ),
       child: Padding(
         padding: category.image != null ? padding ?? const EdgeInsets.all(12.0) : const EdgeInsets.symmetric(vertical: 12),
-        child: Text(category.plantName,
+        child: Text(category.plantName!,
                 style: StylesApp.styleBold14(context).copyWith(
                   fontSize: fontSize ?? 20,
                   fontWeight: fontWeight,

@@ -4,25 +4,25 @@ import 'package:smart_farm/constants.dart';
 abstract class StylesApp {
 
   static TextStyle styleMostThick20(context) {
-    return const TextStyle(
-        fontSize: 20,
+    return TextStyle(
+        fontSize:getResponsiveFontSize(context, fontSize: 24),
         fontWeight: FontWeight.w900,
         color: Colors.yellow,
         letterSpacing: 3.5,
     );
   }
 
-  static TextStyle styleBold36(context) {
-    return const TextStyle(
-      fontSize: 32,
+  static TextStyle styleBold32(context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 32),
       fontWeight: FontWeight.bold,
       color: kPrimaryColor,
     );
   }
 
   static TextStyle styleBold30(context) {
-    return const TextStyle(
-      fontSize: 30,
+    return  TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 30),
       fontWeight: FontWeight.bold,
       color: kPrimaryColor,
     );
@@ -111,17 +111,15 @@ abstract class StylesApp {
   }
 
   static TextStyle styleMedium16(BuildContext context) {
-    return const TextStyle(
-      fontSize: 16,
-      letterSpacing: 2,
-      color: Colors.white,
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontWeight: FontWeight.w500,
     );
   }
 
   static TextStyle styleMedium18(BuildContext context) {
-    return const TextStyle(
-        fontSize: 18,
+    return TextStyle(
+        fontSize: getResponsiveFontSize(context, fontSize: 18),
         color: Colors.black,
         overflow: TextOverflow.visible,
         fontWeight: FontWeight.w500
@@ -169,10 +167,10 @@ double getResponsiveFontSize(context, {required double fontSize}) {
   double scaleFactor = getScaleFactor(context);
   double responsiveFontSize = fontSize * scaleFactor;
 
-  double lowerLimit = fontSize * .8;
-  double upperLimit = fontSize * 1.2;
+  double min = fontSize * .8;
+  double max = fontSize * 1.2;
 
-  return responsiveFontSize.clamp(lowerLimit, upperLimit);
+  return responsiveFontSize.clamp(min, max);
 }
 
 double getScaleFactor(context) {
