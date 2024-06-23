@@ -6,7 +6,9 @@ import 'package:smart_farm/Features/home/data/repos/home_repo_impl.dart';
 import 'package:smart_farm/Features/home/presentation/manager/home_cubit/default_plant_cubit.dart';
 import 'package:smart_farm/Features/home/presentation/views/home_view.dart';
 import 'package:smart_farm/Features/login/presentation/manager/login_cubit/login_cubit.dart';
-import 'package:smart_farm/Features/sensors%20readings/presentation/views/percentages_view.dart';
+import 'package:smart_farm/Features/sensors/data/repos/sensors_repo_impl.dart';
+import 'package:smart_farm/Features/sensors/presentation/manager/sensors_cubit/sensors_cubit.dart';
+import 'package:smart_farm/Features/sensors/presentation/views/sensors_view.dart';
 import 'package:smart_farm/Features/splash/presentation/views/splash_view.dart';
 import 'package:smart_farm/core/utils/service_locator.dart';
 import 'package:smart_farm/core/widgets/back_icon_button.dart';
@@ -18,7 +20,8 @@ void main() {
   runApp(
       MultiBlocProvider(providers: [
     BlocProvider(create: (context) => LoginCubit()),
-    BlocProvider(create: (context) => DefaultPlantCubit(getIt.get<HomeRepoImpl>())..fetchDefaultPlants())
+    BlocProvider(create: (context) => DefaultPlantCubit(getIt.get<HomeRepoImpl>())..fetchDefaultPlants()),
+    BlocProvider(create: (context)=>SensorsCubit(getIt.get<SensorsRepoImpl>())..fetchSensorsData()),
   ], child: const SmartFarmApp()));
 }
 
@@ -40,7 +43,7 @@ class SmartFarmApp extends StatelessWidget {
           HomeView.id: (context) => const HomeView(),
           CustomPlantsView.id: (context) => const CustomPlantsView(),
           CustomPlantFormView.id: (context) => const CustomPlantFormView(),
-          PercentagesView.id: (context) => const PercentagesView(),
+          SensorsView.id: (context) => const SensorsView(),
         },
         home: const SplashView());
   }

@@ -4,14 +4,14 @@ import 'package:smart_farm/core/utils/styles_app.dart';
 
 class CircularPercent extends StatelessWidget {
 
-  final double percentage;
+  final double percent;
   final Color progressColor;
   final String name;
   final String? measruingUnit;
   final double? lineWidth;
 
 
-  const CircularPercent({super.key,required this.name,required this.percentage,required this.progressColor,this.measruingUnit, this.lineWidth});
+  const CircularPercent({super.key,required this.name,required this.percent,required this.progressColor,this.measruingUnit, this.lineWidth});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class CircularPercent extends StatelessWidget {
       animationDuration: 4000,
       startAngle: 0,
       radius: 45,
-      percent: percentage,
+      percent: percent,
       lineWidth: lineWidth ?? 6,
       backgroundColor: Colors.transparent,
       progressColor: progressColor,
@@ -32,7 +32,7 @@ class CircularPercent extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('${(percentage*100).round()} ',
+          Text('${(percent*100).round()} ',
             style: StylesApp.styleBold30(context)
           ),
           Text(measruingUnit ?? '%',
