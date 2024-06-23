@@ -1,30 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:smart_farm/Features/custom%20plant/presentation/views/custom_plant_form_view.dart';
+import 'package:smart_farm/Features/custom%20plant/presentation/views/custom_plants_view.dart';
+import 'package:smart_farm/Features/home/data/repos/home_repo_impl.dart';
+import 'package:smart_farm/Features/home/presentation/manager/home_cubit/default_plant_cubit.dart';
+import 'package:smart_farm/Features/home/presentation/views/home_view.dart';
 import 'package:smart_farm/Features/login/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:smart_farm/Features/sensors%20readings/presentation/views/percentages_view.dart';
+import 'package:smart_farm/Features/splash/presentation/views/splash_view.dart';
+import 'package:smart_farm/core/utils/service_locator.dart';
 import 'package:smart_farm/core/widgets/back_icon_button.dart';
-import 'package:smart_farm/features/splash/presentation/views/splash_view.dart';
-import 'package:smart_farm/features/custom%20plant/presentation/views/custom_plant_form_view.dart';
-import 'package:smart_farm/features/custom%20plant/presentation/views/custom_plants_view.dart';
-import 'package:smart_farm/features/home/presentation/views/home_view.dart';
 import 'package:smart_farm/observer.dart';
-
 
 void main() {
   Bloc.observer = MyBlocObserver();
+  setupServiceLocator();
   runApp(
-      MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context){
-          return LoginCubit();
-        })
-      ],
-      child: const SmartFarmApp()));
-
-  // runApp(DevicePreview(
-  //     enabled: true,
-  //     builder: (context)=>const SmartFarmApp())
-  // );
+      MultiBlocProvider(providers: [
+    BlocProvider(create: (context) => LoginCubit()),
+    BlocProvider(create: (context) => DefaultPlantCubit(getIt.get<HomeRepoImpl>())..fetchDefaultPlants())
+  ], child: const SmartFarmApp()));
 }
 
 class SmartFarmApp extends StatelessWidget {

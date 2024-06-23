@@ -7,7 +7,7 @@ import 'package:smart_farm/core/utils/styles_app.dart';
 class PlantDataCard extends StatelessWidget{
   const PlantDataCard({super.key, required this.name,required this.icon,required this.iconColo, required this.value, required this.unity});
   final String name;
-  final String value;
+  final double value;
   final String unity;
   final IconData icon;
   final Color iconColo;
@@ -50,7 +50,7 @@ class PlantDataCard extends StatelessWidget{
             children: [
               Flexible(
                 child: FittedBox(
-                  child: Text(value,
+                  child: Text('$value',
                     style: StylesApp.styleBold32(context)
                   ),
                 ),
