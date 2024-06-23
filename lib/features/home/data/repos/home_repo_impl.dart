@@ -13,7 +13,7 @@ class HomeRepoImpl extends HomeRepo{
   @override
   Future<Either<Failure, List<PlantModel>>> fetchDefaultPlants()async{
     try{
-      var data = await apiService.get(endPoint:'/plant');
+      var data = await apiService.getMustafa(endPoint:'/plant');
       List<PlantModel> plants=[];
       for(var item in data){
         plants.add(PlantModel.fromjson(item));
