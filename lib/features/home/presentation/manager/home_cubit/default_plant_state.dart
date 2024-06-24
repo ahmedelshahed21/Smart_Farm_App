@@ -1,4 +1,4 @@
-import 'package:smart_farm/Features/home/data/model/plant_model.dart';
+import 'package:smart_farm/Features/home/data/models/default_plant_model.dart';
 
 abstract class DefaultPlantState{
   const DefaultPlantState();
@@ -8,7 +8,7 @@ class DefaultPlantInitialState extends DefaultPlantState{}
 class DefaultPlantLoadingState extends DefaultPlantState{}
 
 class DefaultPlantSuccess extends DefaultPlantState{
-  final List<PlantModel> plants;
+  final List<DefaultPlantModel> plants;
   DefaultPlantSuccess({required this.plants});
 }
 

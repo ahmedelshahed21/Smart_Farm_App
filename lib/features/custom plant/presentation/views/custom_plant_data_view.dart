@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_farm/Features/home/data/model/plant_model.dart';
+import 'package:smart_farm/Features/home/data/models/default_plant_model.dart';
 import 'package:smart_farm/Features/home/presentation/views/widgets/plant_data_section.dart';
 import 'package:smart_farm/Features/sensors/presentation/views/sensors_view.dart';
 import 'package:smart_farm/core/widgets/custom_expansion_tile.dart';
@@ -13,7 +13,7 @@ import 'package:smart_farm/core/widgets/plant_card.dart';
 class CustomPlantDataView extends StatelessWidget{
   static String id='CustomPlantDataView';
   const CustomPlantDataView({super.key, required this.category});
-  final PlantModel category;
+  final DefaultPlantModel category;
 
   @override
   Widget build(BuildContext context) {

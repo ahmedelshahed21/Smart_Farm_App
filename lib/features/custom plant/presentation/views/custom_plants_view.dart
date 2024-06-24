@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_farm/Features/custom%20plant/presentation/views/custom_plant_data_view.dart';
 import 'package:smart_farm/Features/custom%20plant/presentation/views/custom_plant_form_view.dart';
 import 'package:smart_farm/Features/custom%20plant/presentation/views/widgets/custom_item.dart';
-import 'package:smart_farm/Features/home/data/model/plant_model.dart';
+import 'package:smart_farm/Features/home/data/models/default_plant_model.dart';
 import 'package:smart_farm/core/utils/assets_app.dart';
 import 'package:smart_farm/core/utils/styles_app.dart';
 
@@ -16,8 +16,8 @@ class CustomPlantsView extends StatefulWidget {
 }
 
 class _CustomPlantsViewState extends State<CustomPlantsView> {
-  static const List<PlantModel> customPlants = [
-    PlantModel(
+  static const List<DefaultPlantModel> customPlants = [
+    DefaultPlantModel(
         plantName: 'watermelon',
         image: ImagesApp.cottonImage,
         water: 10.5,

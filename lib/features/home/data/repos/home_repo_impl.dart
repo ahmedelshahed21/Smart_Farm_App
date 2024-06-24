@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:smart_farm/Features/home/data/model/plant_model.dart';
+import 'package:smart_farm/Features/home/data/models/default_plant_model.dart';
 import 'package:smart_farm/Features/home/data/repos/home_repo.dart';
 import 'package:smart_farm/core/errors/failure.dart';
 import 'package:smart_farm/core/utils/api_service.dart';
@@ -11,12 +11,12 @@ class HomeRepoImpl extends HomeRepo{
   HomeRepoImpl(this.apiService);
 
   @override
-  Future<Either<Failure, List<PlantModel>>> fetchDefaultPlants()async{
+  Future<Either<Failure, List<DefaultPlantModel>>> fetchDefaultPlants()async{
     try{
       var data = await apiService.getMustafa(endPoint:'/plant');
-      List<PlantModel> plants=[];
+      List<DefaultPlantModel> plants=[];
       for(var item in data){
-        plants.add(PlantModel.fromjson(item));
+        plants.add(DefaultPlantModel.fromjson(item));
       }
       return right(plants);
     }catch(e){
@@ -37,7 +37,7 @@ class HomeRepoImpl extends HomeRepo{
 
 // import 'package:dartz/dartz.dart';
 // import 'package:dio/dio.dart';
-// import 'package:smart_farm/Features/home/data/model/plant_model.dart';
+// import 'package:smart_farm/Features/home/data/model/default_plant_model.dart';
 // import 'package:smart_farm/Features/home/data/repos/home_repo.dart';
 // import 'package:smart_farm/core/errors/failure.dart';
 // import 'package:smart_farm/core/utils/api_service.dart';

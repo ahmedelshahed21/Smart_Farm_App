@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:smart_farm/Features/home/data/model/plant_model.dart';
+import 'package:smart_farm/Features/home/data/models/default_plant_model.dart';
 import 'package:smart_farm/constants.dart';
 import 'package:smart_farm/core/utils/styles_app.dart';
 
 
 class PlantCard extends StatelessWidget{
   const PlantCard({super.key,required this.category,this.width, this.radius, this.fontSize,this.padding, this.fontWeight, this.height});
-  final PlantModel category;
+  final DefaultPlantModel category;
   final double? width;
   final double? height;
   final double? radius;
