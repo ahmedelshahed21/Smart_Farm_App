@@ -12,15 +12,17 @@ class PlantAction extends StatelessWidget{
       child: Row(
         children: [
           Expanded(
+            //flex: 2,
             child: SizedBox(
               height: MediaQuery.of(context).size.height*0.08,
               child: CustomTextButton(
                 onPressed: onPressedCustomizeButton,
-                child: 'Customize Data',
+                child: 'Control',
               ),
             ),
           ),
           Expanded(
+            //flex: 3,
             child: SizedBox(
               height: MediaQuery.of(context).size.height*0.08,
               child: CustomTextButton(

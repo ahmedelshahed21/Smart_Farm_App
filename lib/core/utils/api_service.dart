@@ -15,6 +15,15 @@ class ApiService {
     }
   }
 
+  Future<dynamic> postMustafa({required String endPoint}) async {
+    try {
+      final response = await _dio.post("$kMustafaUrl$endPoint");
+      return response.data;
+    } catch (e) {
+      throw e;
+    }
+  }
+
   Future<dynamic> getMansour() async {
     try {
       final response = await _dio.get(_baseUrlMansour);

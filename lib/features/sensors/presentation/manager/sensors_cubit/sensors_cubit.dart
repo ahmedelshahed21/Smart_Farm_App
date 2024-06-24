@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:smart_farm/Features/sensors/data/models/sensors_model.dart';
-import 'package:smart_farm/Features/sensors/data/repos/sensors_repo.dart';
+import 'package:smart_farm/Features/sensors/data/repos/sensors_repo/sensors_repo.dart';
 import 'package:smart_farm/Features/sensors/presentation/manager/sensors_cubit/sensors_state.dart';
 import 'package:smart_farm/core/errors/failure.dart';
 
