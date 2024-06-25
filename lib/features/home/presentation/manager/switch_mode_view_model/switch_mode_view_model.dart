@@ -1,5 +1,3 @@
-
-
 import 'package:smart_farm/Features/home/data/repos/switch_mode_repo/switch_mode_repo_impl.dart';
 
 class SwitchModeViewModel {

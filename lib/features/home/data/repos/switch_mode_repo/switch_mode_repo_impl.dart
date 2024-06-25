@@ -6,11 +6,9 @@ import 'package:smart_farm/Features/home/data/repos/switch_mode_repo/switch_mode
 class SwitchModeRepoImpl implements SwitchModeRepo{
   final Dio dio;
   SwitchModeRepoImpl(this.dio);
-
   @override
   Future<void> switchMode(String value) async {
-     const url = 'https://api.thingspeak.com/update.<format?api_key=1PPGJQIJ742OVLYE'; // Replace with your API URL
-
+     const url = 'https://api.thingspeak.com/update.<format?api_key=1PPGJQIJ742OVLYE';
     SwitchModeModel data = SwitchModeModel(field1: value);
     String jsonBody = json.encode(data.toJson());
 

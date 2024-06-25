@@ -7,6 +7,10 @@ import 'package:smart_farm/Features/home/presentation/manager/home_cubit/default
 import 'package:smart_farm/Features/home/presentation/manager/send_data_cubit/send_plant_data_cubit.dart';
 import 'package:smart_farm/Features/home/presentation/views/home_view.dart';
 import 'package:smart_farm/Features/login/presentation/manager/login_cubit/login_cubit.dart';
+import 'package:smart_farm/Features/manual%20control/data/repos/pump_repo/pump_repo_impl.dart';
+import 'package:smart_farm/Features/manual%20control/data/repos/roof_repo/roof_repo_impl.dart';
+import 'package:smart_farm/Features/manual%20control/presentation/manager/pump_cubit/pump_cubit.dart';
+import 'package:smart_farm/Features/manual%20control/presentation/manager/roof_cubit/roof_cubit.dart';
 import 'package:smart_farm/Features/manual%20control/presentation/views/manual_control_view.dart';
 import 'package:smart_farm/Features/sensors/data/repos/sensors_repo/sensors_repo_impl.dart';
 import 'package:smart_farm/Features/sensors/presentation/manager/sensors_cubit/sensors_cubit.dart';
@@ -20,11 +24,15 @@ void main() {
   Bloc.observer = MyBlocObserver();
   setupServiceLocator();
   runApp(
-      MultiBlocProvider(providers: [
+      MultiBlocProvider(
+      providers: [
     BlocProvider(create: (context) => LoginCubit()),
-    BlocProvider(create: (context)=>SendPlantDataCubit()),
+    BlocProvider(create: (context) => SendPlantDataCubit()),
     BlocProvider(create: (context) => DefaultPlantCubit(getIt.get<HomeRepoImpl>())..fetchDefaultPlants()),
-    BlocProvider(create: (context)=>SensorsCubit(getIt.get<SensorsRepoImpl>())..fetchSensorsData()),
+    BlocProvider(create: (context) => SensorsCubit(getIt.get<SensorsRepoImpl>())..fetchSensorsData()),
+    BlocProvider(create: (context) => PumpCubit(PumpRepoImpl())),
+    BlocProvider(create: (context) => RoofCubit(RoofRepoImpl())),
+
   ], child: const SmartFarmApp()));
 }
 
@@ -47,7 +55,7 @@ class SmartFarmApp extends StatelessWidget {
           CustomPlantsView.id: (context) => const CustomPlantsView(),
           CustomPlantFormView.id: (context) => const CustomPlantFormView(),
           SensorsView.id: (context) => const SensorsView(),
-          ManualControlView.id:(context) => const ManualControlView(),
+          ManualControlView.id: (context) => const ManualControlView(),
         },
         home: const SplashView());
   }

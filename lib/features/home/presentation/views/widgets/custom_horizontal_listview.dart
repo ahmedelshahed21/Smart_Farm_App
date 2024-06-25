@@ -19,6 +19,7 @@ class CustomHorizontalListView extends StatelessWidget{
           ),
           child: Column(
             children: [
+
               Container(
                 color: kPrimaryColor,
                 width: double.infinity,
@@ -27,7 +28,7 @@ class CustomHorizontalListView extends StatelessWidget{
                   style: StylesApp.styleBold24(context)
                 ),
               ),
-              const SizedBox(height: 5,),
+              const SizedBox(height: 20,),
               const PlantsListView(),
             ],
           ),

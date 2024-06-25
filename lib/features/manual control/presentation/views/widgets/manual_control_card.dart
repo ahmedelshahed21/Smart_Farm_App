@@ -7,11 +7,11 @@ class ManualControlCard extends StatelessWidget {
   final IconData icon;
   final Color iconColor;
   final String title;
-  final String status;
-  final void Function() onPressed;
+  final Widget status;
+  final void Function()? onPressed;
 
   const ManualControlCard({
-    super.key, required this.icon, required this.iconColor, required this.title,required this.onPressed, required this.status,
+    super.key, required this.icon, required this.iconColor, required this.title,this.onPressed, required this.status,
   });
 
   @override
@@ -40,12 +40,9 @@ class ManualControlCard extends StatelessWidget {
             width: 120,
             child: CustomTextButton(
               onPressed: onPressed,
-              child: status,
-              fontSize: 25,
               backgroundColor: Colors.black,
-              textColor: Colors.white,
-              letterSpacing: 5,
               borderRadius: BorderRadius.circular(12),
+              child: status,
               //backgroundColor: kItemColor,
             ),
           )

@@ -23,7 +23,7 @@ void customSnackBar(BuildContext context,String message){
                 Flexible(
                   child: FittedBox(
                     child: Text(message,
-                      style: StylesApp.styleMedium20(context).copyWith(
+                      style: StylesApp.styleMedium16(context).copyWith(
                         color: Colors.yellow
                       )
                     ),

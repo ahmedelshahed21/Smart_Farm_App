@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:smart_farm/Features/home/data/models/default_plant_model.dart';
-import 'package:smart_farm/Features/home/data/repos/home_repo.dart';
+import 'package:smart_farm/Features/home/data/repos/home_repo/home_repo.dart';
 import 'package:smart_farm/core/errors/failure.dart';
 import 'package:smart_farm/core/utils/api_service.dart';
 
