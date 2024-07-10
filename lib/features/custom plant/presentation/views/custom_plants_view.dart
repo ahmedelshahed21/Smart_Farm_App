@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:smart_farm/Features/custom%20plant/presentation/manager/custom_plant_data_cubit/custom_plant_data_cubit.dart';
+import 'package:smart_farm/Features/custom%20plant/presentation/manager/custom_plant_data_cubit/custom_plant_state.dart';
 import 'package:smart_farm/Features/custom%20plant/presentation/views/custom_plant_data_view.dart';
 import 'package:smart_farm/Features/custom%20plant/presentation/views/custom_plant_form_view.dart';
 import 'package:smart_farm/Features/custom%20plant/presentation/views/widgets/custom_item.dart';
-import 'package:smart_farm/Features/home/data/models/default_plant_model.dart';
-import 'package:smart_farm/core/utils/assets_app.dart';
 import 'package:smart_farm/core/utils/styles_app.dart';
+import 'package:smart_farm/core/widgets/custom_circle_progress_indicator.dart';
 
 class CustomPlantsView extends StatefulWidget {
   const CustomPlantsView({super.key});
-
   static String id = 'CustomPlantsView';
 
   @override
@@ -16,39 +17,13 @@ class CustomPlantsView extends StatefulWidget {
 }
 
 class _CustomPlantsViewState extends State<CustomPlantsView> {
-  static const List<DefaultPlantModel> customPlants = [
-    DefaultPlantModel(
-        plantName: 'watermelon',
-        image: ImagesApp.cottonImage,
-        water: 10.5,
-        temp: 5,
-        humidity: 7,
-        soilHumidity: 3,
-        content: 'Ahmed Mohamed El-Shahed'),
-    // PlantModel(
-    //     plantName: 'My Cotton',
-    //     image: ImagesApp.cottonImage,
-    //     water: '10.5',
-    //     temp: '5',
-    //     humidity: '7',
-    //     soilHumidity: '3',
-    //     content: 'Ahmed Mohamed El-Shahed'),
-    // PlantModel(
-    //     plantName: 'My Corn',
-    //     water: '10.5',
-    //     temp: '5',
-    //     humidity: '7',
-    //     soilHumidity: '3',
-    //     content: ''),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text('Custom Plant',
               style:
-                  StylesApp.styleBold20(context).copyWith(color: Colors.white)),
+              StylesApp.styleBold20(context).copyWith(color: Colors.white)),
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.green.shade900,
@@ -57,30 +32,49 @@ class _CustomPlantsViewState extends State<CustomPlantsView> {
             Navigator.pushNamed(context, CustomPlantFormView.id);
           },
         ),
-        body: Padding(
-          padding: const EdgeInsets.only(top: 20.0, bottom: 10.0),
-          child: GridView.builder(
-              itemCount: customPlants.length,
-              clipBehavior: Clip.none,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 1.5,
-                // crossAxisSpacing: 10,
-                mainAxisSpacing: 75,
-              ),
-              itemBuilder: (context, index) {
-                return GestureDetector(
-                  child: CustomItem(
-                      customPlantName: customPlants[index].plantName,
-                      customPlantImage: customPlants[index].image),
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return CustomPlantDataView(category: customPlants[index]);
-                    }));
-                  },
+        body: BlocBuilder<CustomPlantCubit, CustomPlantState>(
+            builder: (context, state) {
+              if (state is CustomPlantSuccess) {
+                return Padding(
+                  padding: const EdgeInsets.only(top: 20.0, bottom: 10.0),
+                  child: GridView.builder(
+                      itemCount: state.customPlants.length,
+                      clipBehavior: Clip.none,
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        childAspectRatio: 1.5,
+                        // crossAxisSpacing: 10,
+                        mainAxisSpacing: 75,
+                      ),
+                      itemBuilder: (context, index) {
+                        return GestureDetector(
+                          child: CustomItem(
+                              customPlantName: state.customPlants[index].plantName,
+                              customPlantImage: state.customPlants[index].image),
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                                  return CustomPlantDataView(
+                                      category: state.customPlants[index]);
+                                }));
+                          },
+                        );
+                      }
+                  ),
                 );
-              }),
-        ));
+              }
+              else if(CustomPlantState is CustomPlantFailure){
+                return Center(
+                  child: Text('No Plants to Show !',
+                      style: StylesApp.styleBold20(context)),
+                );
+              }
+              else {
+                return const Center(child: CustomCircularProgressIndicator());
+              }
+              })
+
+
+    );
   }
 }

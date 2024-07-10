@@ -10,7 +10,6 @@ import 'package:smart_farm/core/widgets/custom_text_form_field.dart';
 
 class LoginSection extends StatefulWidget{
   const LoginSection({super.key});
-
   @override
   State<LoginSection> createState() => _LoginSectionState();
 }
@@ -65,11 +64,9 @@ class _LoginSectionState extends State<LoginSection> {
                     onPressed: (){
                       if(formKey.currentState!.validate()){
                         BlocProvider.of<LoginCubit>(context).loginUser(userNameController.text, passwordController.text);
-                        // print(userNameController.text.toString());
-                        // print(passwordController.text.toString());
                       }
                       else{
-                        customSnackBar(context, ' Invalid Values');
+                        customSnackBar(context, 'Invalid Values');
                       }
                     }
                 ),

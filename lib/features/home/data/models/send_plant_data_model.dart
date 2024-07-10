@@ -1,7 +1,7 @@
 class SendPlantDataModel{
-  final String moisture;
-  final String temp;
-  final String humidity;
+  final double moisture;
+  final double temp;
+  final double humidity;
 
   SendPlantDataModel({required this.moisture, required this.temp, required this.humidity});
 

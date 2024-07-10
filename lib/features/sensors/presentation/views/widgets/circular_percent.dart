@@ -36,7 +36,7 @@ class CircularPercent extends StatelessWidget {
             style: StylesApp.styleBold30(context)
           ),
           Text(measruingUnit ?? '%',
-            style: StylesApp.styleBold24(context).copyWith()
+            style: StylesApp.styleBold18(context).copyWith()
           ),
         ],
       ),

@@ -9,4 +9,6 @@ abstract class ImagesApp{
   static const cottonImage='assets/images/Cotton.png';
   static const cornImage='assets/images/Corn.webp';
   static const blackImage='assets/images/blackImage.jpg';
+  static const controlImage='assets/images/manual_icon.png';
+  static const agriSensorImage='assets/images/agri_sensor.webp';
 }

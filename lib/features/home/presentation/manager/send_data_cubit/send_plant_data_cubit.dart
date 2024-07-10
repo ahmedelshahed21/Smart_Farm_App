@@ -8,7 +8,7 @@ class SendPlantDataCubit extends Cubit<SendPlantDataState>{
   SendPlantDataCubit():super(SendPlantDataInitialState());
   final String _baseUrl='https://api.thingspeak.com/update.json?api_key=69CA55GKQIE1X904';
 
-  Future<void> sendPlantData(String moisture,temp,humidity)async{
+  Future<void> sendPlantData(double moisture,temp,humidity)async{
     emit(SendPlantDataLoadingState());
     final Map<String, dynamic> data = SendPlantDataModel(moisture: moisture, temp: temp, humidity: humidity).toJson();
     final response = await http.post(Uri.parse(_baseUrl),

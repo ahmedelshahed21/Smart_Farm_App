@@ -19,13 +19,12 @@ class CustomHorizontalListView extends StatelessWidget{
           ),
           child: Column(
             children: [
-
               Container(
                 color: kPrimaryColor,
                 width: double.infinity,
                 padding: const EdgeInsets.only(left: 24),
                 child: Text('Plants',
-                  style: StylesApp.styleBold24(context)
+                  style: StylesApp.styleBold30(context).copyWith(color: Colors.white)
                 ),
               ),
               const SizedBox(height: 20,),

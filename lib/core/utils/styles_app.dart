@@ -22,15 +22,15 @@ abstract class StylesApp {
 
   static TextStyle styleBold30(context) {
     return  TextStyle(
-      fontSize: getResponsiveFontSize(context, fontSize: 30),
+      fontSize: getResponsiveFontSize(context, fontSize: 26),
       fontWeight: FontWeight.bold,
       color: kPrimaryColor,
     );
   }
 
-  static TextStyle styleBold24(context) {
+  static TextStyle styleBold18(context) {
     return TextStyle(
-      fontSize: getResponsiveFontSize(context, fontSize: 24),
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
       fontWeight: FontWeight.bold,
       color: Colors.white
     );

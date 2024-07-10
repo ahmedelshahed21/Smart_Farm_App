@@ -9,9 +9,8 @@ class LoginCubit extends Cubit<LoginState>{
   LoginCubit():super(LoginInitialState());
   Future<void> loginUser(String userName,password)async{
     emit(LoginLoadingState());
-    String url = '$kMustafaUrl/login';
     final Map<String, dynamic> data = LoginModel(userName: userName, password: password).toJson();
-    final response = await http.post(Uri.parse(url),
+    final response = await http.post(Uri.parse('$kPlantsUrl/login'),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -20,17 +19,35 @@ class LoginCubit extends Cubit<LoginState>{
 
     if(response.statusCode==200){
       emit(LoginSuccess());
-      // print('success state');
-      // print(response.body.toString());
     }
     else if(response.statusCode>=401){
       emit(LoginFailure());
-      // print('failed state');
-      // print(response.body.toString());
-      // print(response.statusCode.toString());
     }
     else{
       emit(LoginLoadingState());
     }
   }
 }
+
+
+
+// import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:smart_farm/Features/login/data/repos/login_repo.dart';
+// import 'package:smart_farm/Features/login/presentation/manager/login_cubit/login_state.dart';
+//
+//
+// class LoginCubit extends Cubit<LoginState> {
+//   final LoginRepo loginRepo;
+//
+//   LoginCubit(this.loginRepo) : super(LoginInitialState());
+//
+//   Future<void> loginUser(String userName, String password) async {
+//     emit(LoginLoadingState());
+//     try {
+//       await loginRepo.loginUser(userName, password);
+//       emit(LoginSuccess());
+//     } catch (e) {
+//       emit(LoginFailure());
+//     }
+//   }
+// }

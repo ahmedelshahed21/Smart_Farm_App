@@ -6,12 +6,11 @@ import 'package:smart_farm/Features/login/presentation/manager/login_cubit/login
 import 'package:smart_farm/Features/login/presentation/manager/login_cubit/login_state.dart';
 import 'package:smart_farm/Features/login/presentation/views/widgets/animations_section.dart';
 import 'package:smart_farm/Features/login/presentation/views/widgets/login_section.dart';
+import 'package:smart_farm/constants.dart';
 import 'package:smart_farm/core/utils/functions/custom_snack_bar.dart';
+import 'package:smart_farm/core/widgets/custom_circle_progress_indicator.dart';
 
-
-
-
-class LoginView extends StatefulWidget{
+class LoginView extends StatefulWidget {
   const LoginView({super.key});
 
   @override
@@ -19,43 +18,47 @@ class LoginView extends StatefulWidget{
 }
 
 class _LoginViewState extends State<LoginView> {
-  bool isLoading=false;
+  bool isLoading = false;
+
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<LoginCubit,LoginState>(
-        listener: (context,state){
-      if(state is LoginLoadingState){
-        isLoading=true;
-      }
-      else if(state is LoginSuccess){
-        Navigator.pushReplacementNamed(context, HomeView.id);
-        isLoading=false;
-      }
-      else {
-        customSnackBar(context,'User_Name Or Password is Wrong');
-        isLoading=false;
-      }
-    },
-    builder:(context,state) => ModalProgressHUD(
-    inAsyncCall: isLoading,
-      child: Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*.05),
-            child: Column(
-              children: [
-                const AnimationSection(),
-                SizedBox(height: MediaQuery.of(context).size.height*0.03),
-                const LoginSection(),
-              ],
-            ),
-          ),
-        ),
-      ),
-    )
-    )
+    return BlocProvider(
+      create: (context) => LoginCubit(),
+      child: BlocConsumer<LoginCubit, LoginState>(
+          listener: (context, state) {
+            if (state is LoginLoadingState) {
+              isLoading = true;
+            } else if (state is LoginSuccess) {
+              Navigator.pushReplacementNamed(context, HomeView.id);
+              isLoading = false;
+            } else {
+              customSnackBar(context, 'User_Name or Password is Wrong');
+              isLoading = false;
+            }
+          },
+          builder: (context, state) => ModalProgressHUD(
+              color: kBottomSheetColor,
+              progressIndicator: const CustomCircularProgressIndicator(),
+              inAsyncCall: isLoading,
+              child: Scaffold(
+                body: SafeArea(
+                  child: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: MediaQuery.of(context).size.width * .05),
+                      child: Column(
+                        children: [
+                          const AnimationSection(),
+                          SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.03),
+                          const LoginSection(),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ))),
     );
   }
 }

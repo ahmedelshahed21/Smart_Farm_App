@@ -1,5 +1,8 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:smart_farm/Features/manual%20control/data/repos/pump_repo/pump_repo_impl.dart';
+import 'package:smart_farm/Features/manual%20control/data/repos/roof_repo/roof_repo_impl.dart';
 import 'package:smart_farm/Features/manual%20control/presentation/manager/pump_cubit/pump_cubit.dart';
 import 'package:smart_farm/Features/manual%20control/presentation/manager/pump_cubit/pump_state.dart';
 import 'package:smart_farm/Features/manual%20control/presentation/manager/roof_cubit/roof_cubit.dart';
@@ -19,97 +22,102 @@ class ManualControlView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(height: 40),
-          BlocConsumer<PumpCubit, PumpState>(
-            listener: (context, state) {
-              if (state is PumpFailure) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                      content: Text('Failed to send command: ${state.error}')),
-                );
-              }
-            },
-            builder: (context, state) {
-              String waterStatus = 'Open';
-              if (state is PumpLoadingState) {
-                return const ManualControlCard(
+          BlocProvider(
+            create: (context) => PumpCubit(PumpRepoImpl()),
+            child: BlocConsumer<PumpCubit, PumpState>(
+              listener: (context, state) {
+                if (state is PumpFailure) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                        content: Text('Failed to send command: ${state.error}')),
+                  );
+                }
+              },
+              builder: (context, state) {
+                String waterStatus = 'Open';
+                if (state is PumpLoadingState) {
+                  return const ManualControlCard(
+                    icon: Icons.water_drop_outlined,
+                    iconColor: Colors.blue,
+                    title: 'Water',
+                    status: SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: CircularProgressIndicator(color: Colors.greenAccent),
+                    ),
+                  );
+                } else if (state is PumpSuccess) {
+                  waterStatus = state.isPumpOn ? 'Close' : 'Open';
+                }
+                return ManualControlCard(
                   icon: Icons.water_drop_outlined,
                   iconColor: Colors.blue,
                   title: 'Water',
-                  status: SizedBox(
-                    height: 20,
-                    width: 20,
-                    child: CircularProgressIndicator(color: Colors.greenAccent),
-                  ),
+                  status: Text(waterStatus,
+                      style: StylesApp.styleSemiBold18(context).copyWith(
+                          color: Colors.white, fontSize: 25, letterSpacing: 5)),
+                  onPressed: () {
+                    if (waterStatus == 'Open') {
+                      context
+                          .read<PumpCubit>()
+                          .turnOnOrTurnOffPump('TURN_ON_PUMP');
+                    } else {
+                      context
+                          .read<PumpCubit>()
+                          .turnOnOrTurnOffPump('TURN_OFF_PUMP');
+                    }
+                  },
                 );
-              } else if (state is PumpSuccess) {
-                waterStatus = state.isPumpOn ? 'Close' : 'Open';
-              }
-
-              return ManualControlCard(
-                icon: Icons.water_drop_outlined,
-                iconColor: Colors.blue,
-                title: 'Water',
-                status: Text(waterStatus,
-                    style: StylesApp.styleSemiBold18(context).copyWith(
-                        color: Colors.white, fontSize: 25, letterSpacing: 5)),
-                onPressed: () {
-                  if (waterStatus == 'Open') {
-                    context
-                        .read<PumpCubit>()
-                        .turnOnOrTurnOffPump('TURN_ON_PUMP');
-                  } else {
-                    context
-                        .read<PumpCubit>()
-                        .turnOnOrTurnOffPump('TURN_OFF_PUMP');
-                  }
-                },
-              );
-            },
+              },
+            ),
           ),
           const SizedBox(height: 20),
-          BlocConsumer<RoofCubit,RoofState>(
-            listener: (context, state) {
-              if (state is RoofFailure) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                      content: Text('Failed to send command: ${state.error}')),
-                );
-              }
-            },
-            builder: (context, state) {
-              String roofStatus = 'Open';
-              if (state is RoofLoadingState) {
-                return const ManualControlCard(
-                  icon: Icons.water_drop_outlined,
-                  iconColor: Colors.blue,
+          BlocProvider(
+            create: (context)=> RoofCubit(RoofRepoImpl()),
+            child: BlocConsumer<RoofCubit,RoofState>(
+              listener: (context, state) {
+                if (state is RoofFailure) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                        content: Text('Failed to send command: ${state.error}')),
+                  );
+                }
+              },
+              builder: (context, state) {
+                String roofStatus = 'Open';
+                if (state is RoofLoadingState) {
+                  return const ManualControlCard(
+                    icon: Icons.roofing,
+                    iconColor: Colors.brown,
+                    title: 'Roof',
+                    status: SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: CircularProgressIndicator(color: Colors.greenAccent),
+                    ),
+                  );
+                } else if (state is RoofSuccess) {
+                  roofStatus = state.isRoofOpen ? 'Close' : 'Open';
+                }
+                return ManualControlCard(
+                  icon: Icons.roofing,
+                  iconColor: Colors.brown,
                   title: 'Roof',
-                  status: SizedBox(
-                    height: 20,
-                    width: 20,
-                    child: CircularProgressIndicator(color: Colors.greenAccent),
-                  ),
+                  status: Text(roofStatus,
+                      style: StylesApp.styleSemiBold18(context).copyWith(
+                          color: Colors.white, fontSize: 25, letterSpacing: 5)),
+                  onPressed: () {
+                    if (roofStatus == 'Open') {
+                      context.read<RoofCubit>().openOrCloseOffRoof('OPEN_ROOF');
+                      log('roof opened');
+                    } else {
+                      context.read<RoofCubit>().openOrCloseOffRoof('CLOSE_ROOF');
+                      log('roof closed');
+                    }
+                  },
                 );
-              } else if (state is RoofSuccess) {
-                roofStatus = state.isRoofOpen ? 'Close' : 'Open';
-              }
-              return ManualControlCard(
-                icon: Icons.roofing,
-                iconColor: Colors.brown,
-                title: 'Roof',
-                status: Text(roofStatus,
-                    style: StylesApp.styleSemiBold18(context).copyWith(
-                        color: Colors.white, fontSize: 25, letterSpacing: 5)),
-                onPressed: () {
-                  if (roofStatus == 'Open') {
-                    context.read<RoofCubit>().openOrCloseOffRoof('OPEN_ROOF');
-                    print('roof opened');
-                  } else {
-                    context.read<RoofCubit>().openOrCloseOffRoof('CLOSE_ROOF');
-                    print('roof closed');
-                  }
-                },
-              );
-            },
+              },
+            ),
           ),
         ],
       ),

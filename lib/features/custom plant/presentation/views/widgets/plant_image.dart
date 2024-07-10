@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:smart_farm/Features/custom%20plant/presentation/views/widgets/image_source_card.dart';
 import 'package:smart_farm/constants.dart';
+import 'package:smart_farm/core/utils/assets_app.dart';
 import 'package:smart_farm/core/utils/the_image_source_enum.dart';
 
 class PlantImage extends StatefulWidget{
+
   const PlantImage({super.key});
   @override
   State<PlantImage> createState() => _PlantImageState();
@@ -70,7 +72,7 @@ class _PlantImageState extends State<PlantImage> {
   }
 
 
-  File image=File('assets/images/farm-app.jpg');
+  File image=File(ImagesApp.agriSensorImage);
   final imagePicker=ImagePicker();
   pickImage ({required TheImageSource imageSource}) async {
     XFile? pickedImage;

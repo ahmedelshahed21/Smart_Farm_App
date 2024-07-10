@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:smart_farm/constants.dart';
 
@@ -7,7 +9,7 @@ class ApiService {
 
   Future<dynamic> getMustafa({required String endPoint}) async {
     try {
-      final response = await _dio.get("$kMustafaUrl$endPoint");
+      final response = await _dio.get("$kPlantsUrl$endPoint");
       return response.data;
     } catch (e) {
       throw e;
@@ -16,7 +18,8 @@ class ApiService {
 
   Future<dynamic> postMustafa({required String endPoint}) async {
     try {
-      final response = await _dio.post("$kMustafaUrl$endPoint");
+      final response = await _dio.post("$kPlantsUrl$endPoint");
+      log(response.statusCode.toString());
       return response.data;
     } catch (e) {
       throw e;

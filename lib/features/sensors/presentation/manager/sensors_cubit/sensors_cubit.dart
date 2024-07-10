@@ -21,7 +21,6 @@ class SensorsCubit extends Cubit<SensorsState> {
         emit(SensorsFailureState(errMessage: failure.errMessage));
       },
           (sensor) {
-        print('Data loaded successfully');
         emit(SensorsSuccessState(sensors: [sensor]));
       },
     );

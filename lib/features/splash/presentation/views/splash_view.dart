@@ -6,7 +6,6 @@ import 'package:smart_farm/constants.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:smart_farm/core/utils/assets_app.dart';
 
-
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
 

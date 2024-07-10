@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:smart_farm/Features/home/data/models/default_plant_model.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:smart_farm/Features/custom%20plant/data/models/custom_plant_model.dart';
+import 'package:smart_farm/Features/custom%20plant/presentation/views/custom_plants_view.dart';
+import 'package:smart_farm/Features/home/presentation/manager/send_data_cubit/send_plant_data_cubit.dart';
 import 'package:smart_farm/Features/home/presentation/views/widgets/plant_data_section.dart';
-import 'package:smart_farm/Features/sensors/presentation/views/sensors_view.dart';
 import 'package:smart_farm/core/widgets/custom_expansion_tile.dart';
-import 'package:smart_farm/core/widgets/custom_text_button.dart';
+import 'package:smart_farm/core/widgets/plant_action.dart';
 import 'package:smart_farm/core/widgets/plant_card.dart';
-
-
-
 
 
 class CustomPlantDataView extends StatelessWidget{
   static String id='CustomPlantDataView';
   const CustomPlantDataView({super.key, required this.category});
-  final DefaultPlantModel category;
+  final CustomPlantModel category;
 
   @override
   Widget build(BuildContext context) {
@@ -29,20 +28,21 @@ class CustomPlantDataView extends StatelessWidget{
             const Expanded(child: SizedBox()),
             CustomExpansionTile(title: 'Notes',content: category.content),
             const Expanded(child: SizedBox()),
-            PlantDataSection(water: category.water,temp: category.temp,humidity: category.humidity,soilHumidity: category.soilHumidity,),
+            PlantDataSection(water: category.watering,temp: category.temperature,humidity: category.humidity,soilHumidity: category.soilHumidity,),
             const Expanded(child: SizedBox()),
             SizedBox(
               height: 60,
-              child: CustomTextButton(
-                onPressed: (){
-                  Navigator.pushNamed(context, SensorsView.id);
+              child: PlantAction(
+                onPressedCustomizeDataButton: (){
+                  Navigator.pushNamed(context, CustomPlantsView.id);
                 },
-                child: 'Sensor Readings',
-                backgroundColor: Colors.deepOrangeAccent,
-                textColor: Colors.white,
-                borderRadius: BorderRadius.circular(12),
-                letterSpacing: 3,
-                fontSize: 20,
+                onPressedConfirmButton: (){
+                  BlocProvider.of<SendPlantDataCubit>(context).sendPlantData(
+                    category.soilHumidity,
+                    category.temperature,
+                    category.humidity,
+                  );
+                },
               ),
             ),
             const Expanded(child: SizedBox()),

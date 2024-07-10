@@ -3,9 +3,9 @@ import 'package:smart_farm/core/utils/styles_app.dart';
 import 'package:smart_farm/core/widgets/custom_text_button.dart';
 
 class PlantAction extends StatelessWidget{
-  const PlantAction({super.key, this.onPressedCustomizeButton, this.onPressedSensorReadings, this.textColor, this.fontSize, this.letterSpacing});
-  final void Function()? onPressedCustomizeButton;
-  final void Function()? onPressedSensorReadings;
+  const PlantAction({super.key, this.onPressedCustomizeDataButton, this.onPressedConfirmButton, this.textColor, this.fontSize, this.letterSpacing});
+  final void Function()? onPressedCustomizeDataButton;
+  final void Function()? onPressedConfirmButton;
   final Color? textColor;
   final double? fontSize;
   final double? letterSpacing;
@@ -17,13 +17,12 @@ class PlantAction extends StatelessWidget{
       child: Row(
         children: [
           Expanded(
-            //flex: 2,
             child: SizedBox(
               height: MediaQuery.of(context).size.height*0.08,
               child: CustomTextButton(
-                onPressed: onPressedCustomizeButton,
-                child: Text('Manual Control',
-                  style: StylesApp.styleSemiBold18(context).copyWith(
+                onPressed: onPressedCustomizeDataButton,
+                child: Text('Customize Data',
+                  style: StylesApp.styleSemiBold16(context).copyWith(
                       color: textColor,
                       fontSize: fontSize,
                       letterSpacing: letterSpacing
@@ -33,21 +32,22 @@ class PlantAction extends StatelessWidget{
             ),
           ),
           Expanded(
-            //flex: 3,
             child: SizedBox(
               height: MediaQuery.of(context).size.height*0.08,
               child: CustomTextButton(
-                onPressed: onPressedSensorReadings,
+                onPressed: onPressedConfirmButton,
                 backgroundColor: Colors.deepOrangeAccent,
                 borderRadius: const BorderRadius.only(
                   topRight: Radius.circular(12),
                   bottomRight: Radius.circular(12),
                 ),
-                child: Text('Sensor Readings',
-                  style: StylesApp.styleSemiBold18(context).copyWith(
-                      color: Colors.white,
-                      fontSize: 20,
-                      letterSpacing: 3
+                child: FittedBox(
+                  child: Text('Confirm',
+                    style: StylesApp.styleSemiBold16(context).copyWith(
+                        color: Colors.white,
+                        fontSize: 20,
+                        letterSpacing: 3
+                    ),
                   ),
                 ),
               ),
