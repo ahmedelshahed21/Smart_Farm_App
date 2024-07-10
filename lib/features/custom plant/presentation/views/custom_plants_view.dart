@@ -21,6 +21,7 @@ class _CustomPlantsViewState extends State<CustomPlantsView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          titleSpacing: -15,
           title: Text('Custom Plant',
               style:
               StylesApp.styleBold20(context).copyWith(color: Colors.white)),
